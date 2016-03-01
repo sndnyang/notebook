@@ -1,0 +1,103 @@
+Title: D3.js 学习心得一
+Slug: d3js_learn_1
+Date: 2016-3-1
+
+[TOC]
+
+# 流程
+
+## 一、添加 svg 画布， 得到一个 选择器selection
+	
+    var svg = d3.select("body") //选择文档中的某一元素，根据CSS规范，如 "body"
+    .append("svg")          	//添加一个svg元素, 符合html操作
+    .attr("width", width)       //设定宽度
+    .attr("height", height);    //设定高度
+
+## 二、布局（转换数据）
+
+### 2.1 种类
+
+[布局种类](https://github.com/mbostock/d3/wiki/API--%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C#d3layout-%E5%B8%83%E5%B1%80)
+
+### 2.2 定义布局
+
+    var mylayout = d3.layout.tree()  // 例： Tree布局
+
+### 2.3 设置布局的基本属性（接上一项）
+    
+    .size([width, height])       // tree 只想到这个属性
+
+### 2.4 用布局转换数据
+
+    var nodes = mylayout.nodes(data)[.reverse()]  // reverse 逆序， data格式有讲究， json且属性名字限定
+    var links = mylayout.links(nodes)  // 树图要生成点和边
+    或者
+    var piedata = pie(dataset);         // 饼状图就不需要边了
+
+
+## 三、数据绑定到元素（默认新建元素）
+
+### 3.1 从画布选择器中，再选择后代元素
+
+	svg.select(name)			// 选择第一个匹配的元素
+    或者
+    svg.selectAll(name)			// 选择全部匹配的元素
+    
+### 3.2 加载数据（接上一项）
+
+	.data(dataset)			// 元素和数据集一对一加载, 此时得到的叫 update部分
+    或者
+    .datum(oneData)			// 一个数据绑定给全部元素
+    
+### 3.3 对应数据来创建元素（接上一项），如果元素是现成的不需要建
+
+	.enter()			// 只能接上一项 数据加载, 此时得到的叫 enter部分
+    .append(type)	    // 创建需要类型的元素
+
+### 3.4 数据属性设置（例）
+
+根据上一项的 type 和 数据， 设置需要的属性
+
+	.attr("x",20)					//屏幕上的起始横坐标
+    .attr("y",function(d,i){        //屏幕上的起始纵坐标
+         return i * rectHeight;
+    })
+    .attr("width",function(d){      // 元素宽度（有这个属性的话）
+         return d;
+    })
+    .attr("height",rectHeight-2)    // 元素高度（有这个属性的话）
+    .attr("fill","steelblue");      // 颜色填充
+
+### 3.5 事件设置（也是属性）
+
+    .on("mouseover",function(d,i){})
+    .on("mouseout",function(d,i){})
+    .on("click",function(d,i){})
+
+### 在该元素下继续添加其他子元素
+
+前面3.1-3.5步骤结果保存在某变量中， 即可使用该变量继续append,设置属性和事件
+
+## 四、动画效果
+
+### 4.1 方法
+
+- transition()  // 启动过渡效果, 其前后是图形变化前后的状态（形状、位置、颜色等等）
+- duration()    // 指定过渡的持续时间，单位为毫秒
+- ease() 指定过渡的方式，常用的有：  
+    linear：普通的线性变化
+    circle：慢慢地到达变换的最终状态
+    elastic：带有弹跳的到达最终状态
+    bounce：在最终状态处弹跳几次
+- delay() 指定延迟的时间，可用匿名函数function(d,i) 指定各个的延迟
+
+### 4.2 创建动态效果
+
+    var transition = selection.transition()
+                    .duration(time)
+                    .attr()...         // 定义变量是可能用于4.3
+
+### 4.3 对子元素进行处理
+如果元素中有子元素，需要一并处理。
+
+    transition.select(name).attr()
