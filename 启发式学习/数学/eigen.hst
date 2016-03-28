@@ -3,6 +3,8 @@
 怎样的方阵最简单？
 {%radio|请选择&a&b&c&d@d#随便%}
 
+<button onclick='next()'></button>
+
 ## 可对角化
 
 ### 定义
