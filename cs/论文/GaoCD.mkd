@@ -1,0 +1,63 @@
+Title:  GaoCD-总结  
+Date: 2016-3-10
+Author: sndnyang  
+Slug:  GaoCD
+Category: 研究  
+tags: 论文, 多目标进化算法, 群落检测  
+
+# 导论
+
+## 算法思路
+
+1. 通过 划分密度(partition density) 这个目标函数的最优化来寻找 连接群落link communities
+2. 通过 novel genotype representation method, 将 连接群落映射回 点群落。
+
+群落数自动发现
+
+# 算法描述
+
+## 框架
+
+## 目标函数
+
+partition density D only considers the link density within
+the community, different from the common community definition that a community should be densely intra-connected and sparsely connected with the rest
+communities.#
+
+划分密度D
+
+$$  
+
+D(c) = \frac{m_c - (n_c - 1)}{\frac{n_c(n_c-1)}{2} - (n_c-1)}
+
+$$
+
+partition density D is the average of Dc over all communities
+
+$$
+
+D = \frac{2}{M}\sum_c m_c\frac{m_c - (n_c - 1)}{(n_c-2)(n_c-1)}
+
+$$
+
+## 3.3 基因表达
+
+
+### 编码
+
+基于连接的表示方法， 群体中的个体g 有 m 个基因， 下标i 代表边的序号
+m 是边数——吓死人了。 gj 从连接的点中选一个。
+
+当无向图中两边共点时， 两边相连
+
+### 解码
+
+把基因型转化成 分割（由连接群落组成），  gi 作为基因型， 值 j 可看作是边 i 和 边 j 有一个共同点， 并应该归入同一群落中。
+
+桥接边： 连接两个 聚落的边。
+
+Fine tuning: 调整 单一映射方法得到的点群落 的点附属关系
+
+1. 寻找有多附属关系的点 membership
+2. 计算这种点 对各群落是否有贡献——如果加入的话。 贡献计算方法： $$ AD(c) = 2 * \frac{|E(c)|}/{|c|} $$
+3. 添加点后， EC 上升， 则OK

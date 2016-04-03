@@ -1,0 +1,48 @@
+Title: 古典音乐导论-第一周  
+Date: 2016-03-14
+Author:  sndnyang  
+Slug: classical-music-week1
+Category: 音乐   
+tags: 音乐  
+
+[TOC]
+
+
+# 
+
+# 4. 音乐传播过程-声波和耳朵
+
+长波低音高， 短波高音高
+
+空气（外耳） - 内耳 - 电化学信号 - basilar membrane（耳蜗基底膜） - 纤毛感应特定声波 - 大脑 - primary auditory nerve - auditory cortex(大脑皮层) in temporal lobe 
+其他相关：
+1. prefrontal cortex(lobe) -- where am i in this piece
+2. motor cortex parietal lobe -- movement
+3. hippocampus  - memory 
+4. limbic system, amygdala -- emotion 
+
+# 5. ...
+
+# 6. why we like what we like.
+
+对音乐模板、模式(template)的预测方式
+
+1. nurture -- 文化培养
+2. nature
+
+# 7. 西方音乐的语法syntax
+
+1. leading tone -- pull toward the home pitch or tonic
+2. large leap -- reversed by following pitch 
+3. harmony -- must fit with the melody
+4. chord progression -- harmonies usually return home to tonic
+
+# 8. 音乐的本质 nature 
+
+## overtone series
+
+乐器震动出声时， 其实不只一个音， 只是听觉系统让我们只听到最低音， 因为它声音最大
+
+这个最低音振幅最大， 定为 fundamental tone , 其他音 overtones
+
+后面几个音和前面做和音

@@ -1,0 +1,101 @@
+Title:  基于进化算法的群落检测问题综述总结
+Date: 2016-3-7
+Author: sndnyang  
+Slug:  ea_based_communities_survey  
+Category: 研究  
+tags: 论文  
+
+[TOC]
+
+# 网络相关背景知识
+
+## 定义
+
+群落检测没有标准定义， 目前一般视为：
+
+    一组顶点，之间可能有着共同的属性或在图中起到相似的作用
+
+## 分类
+
+1. common model 共同？普通？模型
+2. directed model 有向图模型
+3. signed model 正负向模型
+4. overlapping model 重叠模型
+5. dynamic model 动态模型
+
+# 进化算法与多目标优化
+
+## 进化算法
+
+### 相同性质：
+1. 省
+
+### 框架：
+
+    Algorithm 1 General framework of EAs
+    输入： 参数与问题实例
+    输出： 最优方案
+
+    Begin:
+        population initialisation
+        store optimal solutions
+        for i = 1 to max_iteration do
+            for each individual in the population do
+                generate a new individual through stochastic components
+                evaluate the fitness of the new individual
+            endfor
+            update optimal solutions
+        endfor
+    End
+
+## 多目标优化
+
+### 定义：
+略
+
+### Pareto optimal solution:
+待看书， 此处略
+
+
+# 适应函数 
+
+## 单目标优化
+
+### 4.1.1 基于颗粒度的模型
+因为目标是多目标优化，先略， 如果有用再回来看
+
+### 4.1.2 multi-resolution model 多分辨率？模型
+同上
+
+## 4.2 多目标优化
+
+### 其他model 略
+
+### 重叠模型
+
+
+# 操作子 设计
+
+## 个体表示
+## 个体重现
+## 个体局部搜索
+
+# 结论
+
+## 主要思想：
+
+1. 将群落检测建模成 单目标或多目标优化问题
+2. 设计元启发方法来解决
+
+## 问题一：
+1. 根据 no free lunch 理论， 没有通用方法能解决全部类型的网络 
+2. 不同网络的时-空特性不同
+
+## 问题二：
+1. 由于数据集过大， 基于元启发方法的群落检测是LSGO问题（大规模全局优化）， 
+2. 包含大量的决策变量，对现存优化技术是个挑战。
+3. 如何又快又好就值得思考 
+
+网络群落问题将超越纯粹结构分析，变成强调网络智能。
+
+

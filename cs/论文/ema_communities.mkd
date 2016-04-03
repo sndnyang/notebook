@@ -1,0 +1,154 @@
+Title:  进化多目标方法在动态网络聚落检测中的应用-总结  
+Date: 2016-3-8
+Author: sndnyang  
+Slug:  ema_comminities_dynamic_networks  
+Category: 研究  
+tags: 论文, 多目标进化算法, 群落检测  
+
+[TOC]
+
+# 摘要：
+
+## 目标： 
+1. 最大化当前数据的聚类准确性
+2. 最小化阶段过渡时的聚类漂移 clustering drift
+## 新概念：
+1. temporal smoothness 短时平滑性
+2. snapshot quality , temporal quality 快照质量和短时质量
+
+## 优点：
+provides a solution representing the best trade-off between the accuracy of the clustering obtained, and the deviation from one time step to the successive.
+为聚类的准确性及阶段过渡时的变动提出了一个最优折衷的方案
+
+** 问题是这几个东西都不是这篇文章提的概念， 只是函数可能有变化 
+
+# 导言
+
+进化聚类方法(evolutionary clustering) 利用 temporal smoothness 框架。
+
+核心假设： abrupt changes of clustering in a short time period are not desirable  （译： 短时间内聚类突变是不值得要的？不合适的？）
+
+it smooths each community over time
+
+## 平滑性的实现
+
+折衷：
+
+1. snapshot quality: 在当前阶段所拥有数据下， 聚类要尽可能精确。
+2. temporal cost: 每个聚类在阶段过渡时， 不能发生剧烈变化。
+
+## 本文方法
+
+名字： DYNMOGA (DYNamic MultiObjective Genetic Algorithms)
+
+### 目标
+
+1. 最大化 snapshot quality, 表明当前聚类效果（准确性）， 为此调整了 modularity 的概念
+2. 最小化 temporal cost， 表明两阶段间聚类差别， 为此去计算 归一化互信息(normalized mutual information)
+
+## 优势
+
+1. 利用这两个方法的优势
+2. 选择性搜索解空间， 不需要提前知道 聚类个数。
+
+## 本文主要贡献
+
+1. 将动态网络中群落结构的检测问题 建模成 多目标优化问题--以前肯定有人弄过了，也算贡献？
+2. 本方法可以考虑成 通用框架，应用于进化聚类。 仅仅需要修改目标函数，测试不同的质量函数--别人的算法也可以，这篇就是利用别人的框架。
+3. 本方法不需要参数， 不需要为快照和短时成本设置权重， 也不用设定聚类个数--不知道他人工作情况。
+
+# 相关工作
+
+## 主要工作
+
+
+### Evolutionary Clustering by Chakrabarti et al. in [13]
+1. 认为changes of connections in short time periods could be caused by noise.
+2. 提出了 temporal smoothness 和 snapshot cost  temporal cost
+
+问题是： not allow that the number of communities varies over time
+
+### FacetNet  by Lin et al[5]
+
+### particle-and-density based clustering method  by Kim and Han [3]
+
+### 这些方法的主要问题
+
+1. 聚类个数 不知道。
+2. 相对于要选择 参数 alpha 去应用于 temporal smoothness。
+
+
+# DYNMOGA算法
+
+DYNMOGA has been adapted with a customized
+population type that suitably represents a partitioning of
+a network and endowed with two complementary objectives
+
+他们使用了 matlab 实现的 NSGA-II 算法框架, DYNMOGA支持 定制的、可表示网络分割情况的群体类型, 并具有两种互补的目标（然而并没有说是哪两种）。
+
+## 目标函数 
+
+### 定义
+
+$$$
+
+CR^t = \{ C^t_1, ... C^t_k \} 是图在 t 阶段的聚类结果
+
+一个聚类中有 n_S 个结点 m_S 条边。
+
+m_S(u) = \{v | v \in C_t } 是结点u 在聚类C^t 的邻点个数 
+c_S = \{ (u, v) | u \in C^t, v \notin C^t} 是聚类C^t边界的边数。
+l_S 是 只连接 模块 C^t_S 内部结点 的边总数。
+d_S 是 C^t_S 中点的度数之和
+
+$$$
+
+### 多种分值定义
+
+Q: the first term of each summand is
+the fraction of edges inside a community, while the second
+one is the expected value of the fraction of edges that would
+be in the network if edges fall at random without regard
+to the community structure. Values approaching 1 indicate
+strong community structure
+
+1. modularity 颗粒度 ：  
+$$ Q = \sum^k_{s=1}[\frac{l_s}{m} - (\frac{d_s}{2m})^2] $$
+2. conductance 导率, the fraction of edges pointing outside the clustering：  
+$$ CO = \sum^k_{S=1}\frac{c_S}{2m_S+c_S} $$
+3. Normalized Cut 归一化分割 the fraction of total edge connections to all the nodes in the graph:   
+$$ NC = \sum^k_{S=1}\frac{c_S}{2m_S+c_S} + \frac{c_S}{2(m-m_S)+c_S} $$
+4. Community Score 群落分值, measure the fraction of internal edges of each cluster per nodes：  
+$$ CS = \sum^k_{s=1}(\sum_{u \in C^t}(\frac{m_S(v)}{n_S})^2) * \frac{2m_S}{n_S} $$
+
+### 基因表达
+
+locus-based adjacency representation  [34]
+
+1. 每个个体包含 n 个基因， n 指代 结点的个数
+2. 每个基因 取值范围 1-n， 即第i个基因与第j个基因之间有连接，该划分到同一群落
+
+
+** 注： 这种表达肯定不能用于 群落重叠问题——然而 现实是， 主流用法 就是这样，大同小异
+
+好处： 由个体组成部分的个数，在解码步骤中自动得到
+
+#### decoding step 解码
+使用并查集
+
+1. 建立并查集 makeset
+2. 对每条边去查找, findset
+3. 查到后的进行合并
+
+
+### 初始化
+一个有若干个体的群体， 对每个点i, 在邻接点中随机选择一个作为值， 表示 存在边 (i,j)
+
+### uniform crossover 均匀交叉
+给定两个父辈个体， 创建一个随机二元mask, 进行选择， 当 mask 为0时， 取第一个父辈个体的基因（值）， 为1时， 取第二个父辈个体。 如此组成子代的基因
+
+### 突变
+
+与初始化类似， 对结点i 随机变更值成其他邻点。
+
+

@@ -1,0 +1,202 @@
+% alpha 介绍
+% 杨秀隆 X2015221018
+% 2016-3-25
+
+# 导论
+
+<!--Title:  alphago-总结  
+Date: 2016-3-25
+Author: sndnyang  
+Slug:  alphago-papers
+Category: 研究  
+tags: 论文, AI, deep learning  -->
+
+## 参考文献
+
+1. 原文:Mastering the Game of Go with Deep Neural Networks and Tree Search 
+2. [alphago-原理](http://mp.weixin.qq.com/s?__biz=MzIxNjE3MTM5OA==&mid=402241411&idx=1&sn=98557fdc359a17af9ab6b1ed7e09854a&scene=1&srcid=0314rM6ivyxIaEMfKIaW167Z&from=groupmessage&isappinstalled=0#wechat_redirect) 郑宇,张钧波
+3. [alphago-分析](http://zhuanlan.zhihu.com/yuandong/20607684) 田渊栋
+4. 开源代码 [alphago-code](https://github.com/Rochester-NRT/AlphaGo)
+
+## 战绩
+
+#### 对欧洲冠军 Fan Hui
+![fanhui](img/fanhui.png)
+
+1. formal games were 1 hour main time plus 3 periods of 30 seconds byoyomi
+2. informal games were 3 periods of 30 seconds byoyomi
+
+--------
+
+### 对李世石
+
+1. 2016.3.9  alpha胜
+2. 2016.3.10  alpha胜
+3. 2016.3.12  alpha胜
+4. 2016.3.13  李世石胜
+5. 2016.3.15  alpha胜
+
+---------
+
+### 期待与柯洁的对战
+
+李世石重下战书
+
+# 基本定义
+
+## 棋盘状态
+
+![go-state](img/go-state.png)
+
+## 动作 action
+
+**a**: action 动作
+
+![go-action](img/go-action.png)
+
+## 暴搜不可行！！！
+
+![go-brute](img/go-brute.png)
+
+------
+
+### 组合爆炸！！！
+
+1. 围棋的可能状态数大约在 250^150 
+2. 国际象棋  35^80
+
+## 策略
+
+1. 减少搜索树的深度， 即先行评估位置， 避免深度递归
+2. 减少搜索树的广度， 即减少可能动作分支
+
+# 方法
+
+##
+
+![principle](img/principle.jpg)
+
+## 步骤
+
+1. 用棋谱数据 训练 监督学习策略(走棋)网络, 同时训练快速走子策略
+2. 对策略网络进行强化学习， 程序自我对弈
+3. 训练一个价值网络， 预测胜率
+4. 用MCTS 结合策略网络和价值网络
+
+## 组成
+
+链接：http://zhuanlan.zhihu.com/yuandong/20607684
+来源：知乎
+
+1. 走棋网络（Policy Network），给定当前局面，预测/采样下一步的走棋。
+2. 快速走子（Fast rollout），目标和1一样，但在适当牺牲走棋质量的条件下，速度要比1快1000倍。 
+3. 估值网络（Value Network），给定当前局面，估计是白胜还是黑胜。
+4. 蒙特卡罗树搜索（Monte Carlo Tree Search，MCTS)，把以上这三个部分连起来，形成一个完整的系统。
+
+# 一. 策略网络学习
+
+## 监督学习
+
+训练集数据： KGS 专业棋手(5-9段)的棋谱， 大概16万局棋， 3千万种棋盘状态
+
+学习到一个预测模型 g
+
+1. 状态S
+2. 预测模型 g:S->p(a|S)
+3. 概率 p(a|S)
+4. 概率最大的动作 a
+
+## 模型学习算法
+
+深度学习： Convolutional Neural Network (CNN)， 卷积神经网络
+
+1. 围棋对局势的评估很难建模， 抽象
+2. CNN正好擅长抽象
+
+另用线性模型训练快速策略
+
+--------
+
+![cnn](img/cnn.png)
+
+--------
+
+### 随机梯度下降
+
+![go-gd](img/go-gd.png)
+
+## 预测
+
+1. 输入： 棋盘状态S
+2. 输出： 所有合法动作a 的概率分布
+
+
+# 二. 策略网络强化
+
+## 对弈激励
+
+当前版本的策略网络 与 随机的一个版本
+
+胜 z_t = +1, 负= -1, 未结束=0
+
+![go-rl](img/go-rl.png)
+
+## 瓶颈
+
+强化学习 存在理论瓶颈， 而且应该是被证明了， 没记。
+
+# 三. 价值网络强化
+
+
+## 步骤
+
+输入状态S, 经过
+
+1. 普通策略网络 生成前 U-1步
+2. 随机采样 决定 第U步
+3. 增强策略网络 完成剩下博弈
+
+胜负作为输出
+
+得到价值网络， 判断该盘面的输赢概率
+
+-------
+
+### reduce 搜索空间的方案
+
+1. 减少搜索树的深度， 价值网络 value network
+2. 减少搜索树的广度， 策略网络 policy network
+
+# 四. monte-carlo 树搜索
+
+## 步骤
+
+1. 选择， 用策略网络剪枝
+2. 扩展
+3. 评估， 使用价值网络
+4. 回溯
+
+## 树的组成
+
+对 每条边(状态s, 动作a)
+
+1. 动作值 action value Q(s, a)
+2. 访问次数 visit count N(s, a)
+3. 先验概率 prior probability P(s, a), 初始化为 策略网络值 p(a|s)
+
+--------
+
+### 图示：
+
+![go-mcts](img/go-mcts2.png)
+
+--------
+
+### 描述
+
+1. 根据 ![go-action-max](img/go-action-max.png)， 找到叶子结点
+2. 用策略网络计算所有可能下一步的概率， 逐个进行3
+3. 用价值网络和快速走子策略评估 ![go-leaf-eval](img/go-leaf-eval.png)
+
+![go-bonus](img/go-bonus.png)
+
