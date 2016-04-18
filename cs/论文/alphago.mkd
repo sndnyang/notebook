@@ -1,15 +1,9 @@
-% alpha 介绍
-% 杨秀隆 X2015221018
-% 2016-3-25
-
-# 导论
-
-<!--Title:  alphago-总结  
+Title:  alphago-总结  
 Date: 2016-3-25
 Author: sndnyang  
 Slug:  alphago-papers
 Category: 研究  
-tags: 论文, AI, deep learning  -->
+tags: 论文, 人工智能, 深度学习
 
 ## 参考文献
 
