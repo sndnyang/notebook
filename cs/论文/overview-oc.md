@@ -1,8 +1,8 @@
-Title: 群落覆盖问题总结   
+Title: 社区覆盖问题总结   
 Date: 2016-03-04
 Slug: overlap_communities_survey  
-category: 研究
-Tags: 论文
+category: 数据挖掘
+Tags: 社区发现, CS, 算法
 
 [TOC]
 

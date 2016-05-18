@@ -2,8 +2,8 @@ Title:  进化多目标方法在动态网络聚落检测中的应用-总结
 Date: 2016-3-8
 Author: sndnyang  
 Slug:  ema_comminities_dynamic_networks  
-Category: 研究  
-tags: 论文, 多目标进化算法, 群落检测  
+Category: 数据挖掘  
+tags: 论文, 多目标进化算法, 社区发现, CS  
 
 [TOC]
 

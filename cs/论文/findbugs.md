@@ -1,8 +1,8 @@
 Title: FindBugs总结
 Date: 2016-3-3 21:20:20
 slug: findbugs_summary
-category: 研究
-tags: 论文
+category: 软件工程
+tags: 论文, CS, 软件工程  
 
 [TOC]
 

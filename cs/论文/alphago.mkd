@@ -5,16 +5,18 @@ Slug:  alphago-papers
 Category: 研究  
 tags: 论文, 人工智能, 深度学习
 
-## 参考文献
+[TOC]
+
+# 参考文献
 
 1. 原文:Mastering the Game of Go with Deep Neural Networks and Tree Search 
 2. [alphago-原理](http://mp.weixin.qq.com/s?__biz=MzIxNjE3MTM5OA==&mid=402241411&idx=1&sn=98557fdc359a17af9ab6b1ed7e09854a&scene=1&srcid=0314rM6ivyxIaEMfKIaW167Z&from=groupmessage&isappinstalled=0#wechat_redirect) 郑宇,张钧波
 3. [alphago-分析](http://zhuanlan.zhihu.com/yuandong/20607684) 田渊栋
 4. 开源代码 [alphago-code](https://github.com/Rochester-NRT/AlphaGo)
 
-## 战绩
+# 战绩
 
-#### 对欧洲冠军 Fan Hui
+## 对欧洲冠军 Fan Hui
 ![fanhui](img/fanhui.png)
 
 1. formal games were 1 hour main time plus 3 periods of 30 seconds byoyomi
@@ -22,7 +24,7 @@ tags: 论文, 人工智能, 深度学习
 
 --------
 
-### 对李世石
+## 对李世石
 
 1. 2016.3.9  alpha胜
 2. 2016.3.10  alpha胜
@@ -32,7 +34,7 @@ tags: 论文, 人工智能, 深度学习
 
 ---------
 
-### 期待与柯洁的对战
+## 期待与柯洁的对战
 
 李世石重下战书
 

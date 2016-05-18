@@ -1,8 +1,8 @@
 Title: FOCS总结 
 Slug: FOCS_summary
 Date: 2016-03-01
-category: 研究
-Tags: 论文
+category: 数据挖掘
+Tags: 论文, CS, 社区发现, 算法
 
 [TOC]
 
