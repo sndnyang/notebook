@@ -1,0 +1,78 @@
+Title: zhimind-数据结构可视化  
+Date: 2016-4-28       
+Author: sndnyang  
+Slug: zhimind-datastruct   
+Category: zhimind  
+tags: zhimind, 数据结构, 可视化  
+
+[TOC]
+
+# 数据结构可视化
+
+DataStructVis.js--基于vis.js制作的基本数据结构可视化库（散点图基于 echarts.js）
+
+## 使用说明
+
+0. 全局变量满足， 见下面全局变量说明
+1. 选择div容器 -- var container = document.getElementById('datastruct');
+2. 选择数据结构类型 -- 见后面列表
+3. 创建 variable = type(container, size)   
+    如structure = LinkedList(container, 10);
+
+
+## 全局变量说明
+
+一开始没有进行分析设计， 还在使用多个全局变量， 没有设置成内部变量， 全局变量分别是：
+
+* nodes
+* nodeSet
+* edges
+* edgeSet
+* data
+* network
+
+## 支持数据结构
+
+示例见（不建议在这个网页上改大的数值--起码有向图挺卡的）： 
+
+[demo](http://sndnyang.github.io/datastruct.html)
+
+1. 链表
+2. 栈
+3. 队列
+4. 森林 -- 允许多棵树
+5. 树 -- 单棵树，分支不限
+6. 二叉树 -- 分支限制不超过2   
+    左右子树目前不能确定， 只能用 空结点（无标签）来设定。
+7. 无向图
+8. 有向图 -- 目前暂不支持在自动生成图时 设定密度
+9. 矩阵
+10. 散列表
+11. 散点图（2D）
+
+高级数据结构基本可显示成以上结构， 所以感觉不需要。
+
+## 功能列表
+0. 随机初始化 -- 都有简单版本
+1. 解析数据 -- 都可解析对应格式数据， 并重新绘制   
+    1. 链表： 列表数据， 如 [1,2,3]
+    2. 栈： 列表数据
+    3. 队列： 列表数据
+    4. 森林： json数据， 不能有环， 如 {1: [2,3,4], 2: [5], 3: [6], 7}
+    5. 树： json数据， 只能有一个根。
+    6. 二叉树： json数据， 子结点不能超过2个。
+    7. 有向图： json数据
+    8. 无向图： json数据
+    9. 矩阵： 二维数组数据
+    10. 散列表: json数据
+    11. 散点图：二维点列表， 如： [点1, 点2, 点3]，    
+        点格式： [[x], y, class], [x]本来是为了支持3维--TODO：改掉
+2. 更新数据 -- 少量有实现自己的更新数据接口：    
+    1. 链表: add 标签， swap 交换标签， remove 值， removeID 移除ID
+    2. 栈： pop, push
+    3. 队列： enqueue, dequeue
+
+3. 点标记 -- markNodes([id1, id2, id3, idn]), 将相应id的点修改成红色。
+4. 交换标签 -- 待全部实现
+5. setData -- 数据重绘， 数据格式自定义
+

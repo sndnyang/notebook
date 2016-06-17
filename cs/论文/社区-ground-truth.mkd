@@ -1,0 +1,214 @@
+Title: Defining and Evaluating Network Communities based on Ground-truth  
+Date: 2016/06/09 10:23:17       
+Author: sndnyang  
+Slug:  Communities-Ground-Truth    
+Category: CS   
+tags: 论文, CS, 社区发现  
+
+[TOC]
+
+# 摘要
+
+
+## 社区发现的挑战
+
+1. 社区定义的多样性、不确定性 a plethora of definitions of a community
+2. 算法困难， NP-hard intractability of algorithms
+3. 评估困难，缺少可靠的参考 lack of a reliable gold-standard ground-truth
+
+## 本文工作
+
+### 定义 ground-truth
+
+根据230个大规模的实际网络数据， 包括社交、协作、信息网络
+
+这些数据里的点有明确的归属关系，属于
+
+进而可以用这些信息来定义参考（ground-truth） 社区的可靠、可信的标记标签
+
+### 量化评估
+
+量化评估网络社区的不同结构化定义， 评估敏感度、 稳定性和性能
+
+# 导论
+
+## 贡献
+
+A possible solution would be to find a reliable definition of explicitly labeled gold-standard ground-truth communities
+
+贡献：
+
+1. 对230个大规模的社交、信息网络，用一种可靠的方法，定义了参考（ground-truth）社区
+2. 基于ground-truth，量化评估了网络社区的13种常用的结构化定义， 并检验了它们的稳定性和敏感性
+3. 扩展了局部谱聚类算法， 得到一种无参社区发现方法， 可支持百万点级别的网络检测
+
+# 数据集评估
+
+## 社区参考标准
+
+1. 社交网络的社区， 基于特定主题的分组
+2. 购物网络， 基于层次化组织的货物分类
+3. 科研合作网络， 基于相同的出版组织（会议等）
+
+### 好处
+
+与社区发现工作的隐含前提一致： 
+
+> 社区内的成员会有相同的功能或性质
+> 这是网络的组织原则
+
+### 其他方案
+
+用成员点对点的相似度， 以属性来评估社区
+
+来源：Y.-Y. Ahn, J. P. Bagrow, and S. Lehmann Link communities reveal multi-scale complexity in networks 
+[文章链接](https://www.researchgate.net/publication/44687459_Link_Communities_Reveal_Multiscale_Complexity_in_Networks)
+
+## 数据预处理
+
+1. 无权重无向静态图。
+2. 组里成员可能无外连， 视作独立的社区
+3. 参考社区可内嵌、 可重叠
+
+## 社区评分方法
+
+思想：
+
+给定一个社区评分方法，
+
+> 把它发现的高分点集视作社区
+> 社区内点的连通度高，
+> 社区间连通度低。
+
+--------
+
+### 分类
+
+1. 基于内部连通性
+    1. 内部边密度
+    2. 内部边数
+    3. 平均度数
+    4. 度数中位数上比例
+    5. 三角参与比例
+2. 基于外部连通性
+    1. 扩展
+    2. 割比例 cut ratio
+3. 内外部连通性结合
+    1. 传导性 conductance
+    2. 标准割 normalized cut
+    3. 最大出度分数
+    4. 平均出度分数
+    5. Flake出度分数
+4. 基于网络模型
+    1. 模块性
+
+因公式麻烦， 请看图片
+
+![png1](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/scoring_function1.png)
+![png2](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/scoring_function2.png)
+
+### 实验结果
+
+1. 计算每个标准社区的的这13种分数
+2. 计算一个相关矩阵 correlation matrix
+3. 设定相关阈值， 比如 0.6 分成四组
+
+![scoreConnect](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/scoringConnect.png)
+
+
+# 评估社区评分函数
+
+> to develop an evaluation methodology
+> for network community detection
+
+## 社区效果度量
+
+采用一种公理化方法（然而只有第一步）：
+
+### 定义四个社区效果（goodness)度量
+
+对“好”社区的直观定义进行规范形式化(formalize)
+
+### 区别
+
+> 社区评分函数量化了一个集合的“社区相似度”
+> 效果试题量化社区的满意度(desirable property)
+
+### 分类
+
+对点集S 的效果度量g(S)有：
+
+1. 可分度Separability： g(S) = 内边数/外边数
+2. 密度Density: g(S) = 边数/（2点组合数）
+3. 凝聚度Cohesiveness: S诱导（生成）子图的最大导率(conductance)
+4. 聚类协同系数Clustering coefficient：没有准确描述，得看其他论文
+
+## 实验设置
+
+步骤：
+
+1. 有很多标准社区Si
+2. 对每个评分函数， 把标准社区按该方法的分数降序排列
+3. 计算前k个标准社区的效果度量值， 并计算累积平均
+
+直观思路：
+
+1. 好的社区评分函数与效果度量完美相关（正或负）
+2. 则效果度量的平均值 应该 随k 单调
+3. 假设社区评分函数乱排序， 效果度量平均值将是k的固定函数 constant function
+
+## 实验结果
+
+![scoreMetrics](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/scoring_metrics.png)
+
+# 社区评分函数稳定性 Robustness
+
+## Community perturbation strategies
+
+1. 点交换： 随机选择一条边(u, v), $u \in S, v \notin S$， 对S 删除u，加上v
+2. 随机： 随机选择$u \in S, v \notin S$， 对S 删除u，加上v
+3. 扩展: 随机选择 $u \in S, v \notin S$， 对S 加上v
+4. 收缩： 随机选择 $u \in S, v \notin S$， 对S 删除u
+
+## 量化差别
+
+h(S, p)代表干扰后， 则 Z-score:
+
+![zscore](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/zscore.png)
+
+E是期望， Var 是方差
+
+高Z-score意味着什么？
+
+标准社区的期望分数比扰动后的低， 所以对f评估函数来说， 标准社区比扰动后好。
+
+
+## 实验
+
+# 基于种子点的社区发现
+
+## 基本算法
+
+给定： 图G、 种子节点s、 评分函数f
+
+步骤：
+
+1. 用PageRank-Nibble， 从点s开始计算随机游走分数$r_u$
+2. 根据$r_u$/d(u)，对点进行排序， d(u)是点u的度
+3. 对前k个点， 计算社区评分函数 f(Sk)
+4. 检测f(Sk)的极小值，发现一到多个社区
+5. if 要发现一个社区    
+       找到第一个局部最优的fk    
+   else   
+       找到全部的局部最优
+
+英文版描述：
+
+![comDetect](http://7xt8es.com1.z0.glb.clouddn.com/paper/groundtruth/communityDetection.png)
+
+
+# 个人总结
+
+1. 本文定义标准社区思想非常简洁。
+2. 新提出的社区发现方法， 里面极小值的使用不知道是什么原理。
+3. 实验部分长， 但真正做研究也确实应该这样认真地做实验分析， 不同的评估函数、衡量标准、 干扰等等。

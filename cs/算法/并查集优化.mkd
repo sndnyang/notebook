@@ -1,0 +1,59 @@
+Title:  并查集优化    
+Date: 2016-4-28       
+Author: sndnyang  
+Slug: union-find-optimize   
+Category:  算法  
+tags: CS, 算法, 数据结构  
+
+[TOC]
+
+# 方法 1 带权重快速合并
+好处:
+
+1. 优化 快速合并 ，避免树的层次过多
+2. 随时记录每棵树（子树）的大小
+3. 通过将较小子树的根挂在较大树的根下，来获得平衡
+
+## 数据结构
+比快速合并算法，增加一个大小为N的整型数组sz。 sz[i]代表以i为根的对象个数。
+
+## 查找
+与快速合并相同， return root(p) == root(q)
+
+## 合并
+1. 将较小子树的根结点连接到较大子树的根结点
+2. 更新sz数组
+
+    public void union(int p, int q) { int i = root(p); int j = root(q);
+
+    if (sz[i] < sz[j])  { id[i] = j; sz[j] += sz[i];}
+    else                { id[j] = i; sz[i] += sz[i]; }
+    }
+
+## 算法分析
+运行时间:
+
+1. 查找: 与p和q的深度成正比 即 lg N
+2. 合并: 对给定的根，只花费常数时间 lg N
+3. 结点x的尝试最多为 lg N.
+
+# 路径压缩
+方法: 计算出p的根结点后， 将每个被检测到的结点都指向这个根结点
+
+## 实现:
+两次遍历: 循环中再增加一次处理， 将每个被检测到的结点的id指向上一层的根结点。
+
+    private int root(int i) { while (i != id[i]) { id[i] = id[id[i]]; i = id[i]; } return i; }
+
+## 命题:
+
+从空集开始，N个对象的任意M次操作，对数组的访问次数萍踪:
+
+    <= c (N + M  lg* N)
+
+lg* N 其实就是 lg N 的再次求对数的样子。
+In computer science, the iterated logarithm of n, written log* n (usually read "log star"), is the number of times the logarithm function must be iteratively applied before the result is less than or equal to 1.
+
+本算法理论上非线性复杂度， 实际上可以看作线性。
+
+

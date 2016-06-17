@@ -1,0 +1,85 @@
+Title: 其他     
+Date: 2016-4-28            
+Author: sndnyang    
+Slug:  other    
+Category:  other   
+tags:  other    
+
+[TOC]  
+
+# 数据库  
+
+## db2  
+
+[db2 变更alter](db2_alter.html)  
+[db2 导出](db2_export.html)  
+[db2 特殊查询](db2_te-shu-cha-xun.html)  
+[db2-jdbc](db2_jdbc.html)  
+[db2 配置远程数据库](db2_pei-zhi-yuan-cheng-shu-ju-ku.html)  
+
+# 系统工具  
+
+[端口监听](duan-kou-jian-ting.html)  
+[grep技巧](grepji-qiao.html)  
+[find_grep](find_grep.html)  
+[命令行工具](LinuxCommand.html)  
+[tar压缩](tar_ya-suo.html)  
+[date](date.html)  
+[makefile](makefile.html)  
+[vbox共享文件夹](share_folder.html)  
+[awk-sed](awkyu-sed.html)
+
+## ctags+vim  
+
+[tag技巧](tag_tips.html)  
+[cscope技巧](cscope_tips.html)
+
+## shell  
+
+[shell文件.html](shell_file.html)  
+[shell技巧.html](shell_ji-qiao.html)  
+[shell时间.html](shell_shi-jian.html)  
+[shell_string.html](shell_string.html)  
+[shell变量控制.html](shellbian-liang-kong-ge.html)  
+[shell替换与插入-ru.html](shell-ti-huan-yu-cha-ru.html)  
+
+## ksh  
+[ksh_auto_complete.html](ksh_auto_complete.html)  
+[ksh判断.html](ksh_judge.html)  
+[ksh手册.html](ksh_manual.html)  
+[ksh数学运算.html](ksh_shu-xue-yun-suan.html)  
+[ksh数组.html](ksh_shu-zu.html)  
+[ksh语法.html](ksh_yu-fa.html)  
+[ksh参数处理.html](can-shu-chu-li.html)  
+[ksh自动补全.html](kshzi-dong-bu-quan.html)  
+[profile设置](profileshe-zhi.html)  
+
+
+# 论文  
+
+[FOCS总结](FOCS_summary.html)  
+[FOCS notebook](focs-notebook.html)  
+[基于进化算法的社区发现综述](ea_based_communities_survey.html)  
+[社区重叠综述](overlap_communities_survey.html)  
+[进化多目标方法在动态网络聚落检测中的应用-总结](ema_comminities_dynamic_networks.html)  
+
+# MOOC  
+
+[数据分析与统计推断项目翻译](dasi-project-translate.html)  
+[生物信息学算法课程概述](bioinform-intro.html)  
+
+
+# 编程语言  
+## python  
+
+[python web框架html模板](HtmlTemplatesInPython.html)  
+[](HtmlTemplatesInPython.html)  
+
+
+## java  
+
+[java乱码.html](java_luan-ma.html)  
+[java-Comparator.html](java-Comparator.html)  
+[java错误.html](java-error.html)  
+[java-Generic-Iterator.html](java-Generic-Iterator.html)  
+

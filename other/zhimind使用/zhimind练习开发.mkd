@@ -1,0 +1,21 @@
+Title: zhimind练习开发
+Date: 2016-4-28       
+Author: sndnyang  
+Slug: zhimind-practice-manual   
+Category: zhimind  
+tags: zhimind  
+
+[TOC]
+
+# 练习使用说明
+
+文本部分同 教程说明 [zhimind教程](http://sndnyang.github.io/zhimind-manual.html#_2)
+
+需要在和文本文件同一路径下有一个 answer.js 文件
+
+## answer.js定义
+
+1. 定义函数 initData(): 自定义界面样式， 并为某div 创建可视数据结构， 见[datastructvis]()
+2. 定义 procedure(v): v 是数据， 定义算法过程生成的 stepLog 列表。
+
+
