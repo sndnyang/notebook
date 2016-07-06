@@ -1,0 +1,121 @@
+Title: 多层边混合模型   
+Date: 2016/07/05 16:52:13       
+Author: sndnyang  
+Slug: multilayer-edge-mixture-model   
+Category: CS   
+tags: 论文, CS, 社区发现  
+
+[TOC]
+
+# 摘要
+
+本文针对多层的网络数据--可能主要是对它进行社区发现--做了以下工作：
+
+1. 提出多层边混合模型(multilayer edge mixture model MEMM)，从边组合的视角（观点），探索一种通用的社区结构评估器
+2. 展示了从MEMM可以推导出多层颗粒度(multilayer modularity)和随机块模型(stochastic blockmodel)
+3. 探索以MMEM的形式，对特定形式的社区结构评估器进行分解。这样可以发现评估器的新的解释。
+
+社区发现的说明：
+
+多层图（多层图）的说明：
+
+
+本文使用的是柱式多层图， 各层点相同。
+
+# 导论
+
+MEMM(multiply edge mixture model)：  
+
+1. 是基于边（的贡献）的线性组合。
+2. 超模型(hyper model)，能为现存的多层社区结构评估器提供新的解释。
+3. 帮助推导出新的质量函数。
+
+# 正文
+
+## 基础
+
+Reichardt and Bornholdt提出的 边反馈方案(rewarding scheme of edges), 应用于单层网络
+
+1. 奖励社区内存在的边
+2. 惩罚社区内不存在的边
+3. 惩罚社区间存在的边
+4. 奖励社区间不存在的边
+
+Reichardt and White 提出的 role model， 假设只允许一些社区对之间存在边，这些社区定义为“亲密社区 intimate communities”
+
+1. 奖励亲密社区间的边
+2. 奖励非亲密社区间不存在的边
+
+以上两种方案的相同点：
+
+1. 引入超参数，根据社区定义确定参数值，得到社区结构评估器。
+2. 该评估器代表了被发现社区结构的质量，进而得到最优社区分配。
+
+这样的模型命名为 超模型（hyper model）
+
+## MEMM
+
+在边反馈方案的基础上：
+
+1. 添加层间边的情况
+2. 添加边的概率
+
+如图：
+
+![mmem]()
+
+1. s和r代表层, node is代表i点在s层
+2. A, C, v 矩阵分别表示 层内邻接、 层间邻接和社区标签
+3. abcdefgh是超参数，混合系数
+4. P是两点同属一社区的概率， 支持模糊划分 fuzzy partition.
+5. lambda(w)函数， 大于w，返回1， 否则 -1
+
+### hyper parameter的设定
+
+策略：
+
+1. 固定值
+2. 网络结构的某个特定函数？什么意思
+
+可行做法：
+
+1. 根据边的贡献比例， 选择固定值（贡献比例怎么求？）
+2. 网络变更后，重算参数
+
+
+## 推导
+
+之后的工作是从MEMM来推导：
+
+1. 模块性(Modularity)
+2. SBM stochastic blockmodel 随机块模型
+
+这部分可以理解成拟合、 泰勒展示、 逼近、 近似什么的。
+
+通过设定超参数 hyper parameters 的值就可以做到， 所以MEMM是个更加通用的模型
+
+具体表达涉及 模块性、SBM的定义， 就不在这里展开了。（也还没看）
+
+## 分解评估器
+
+不太理解这块和上一块推导有多少区别。 模块性和随机块模型是否也算是评估器。
+
+看起来没太多区别。
+
+意义在于：
+
+decomposition of an evaluator reveals the preference of the evaluator
+
+但evaluator是什么和如何decompose 都没讲好的感觉
+
+# 实验部分
+
+内容很多~~~
+
+# 总结
+
+1. 复杂，长
+2. 语言也比较复杂~~~介绍部分大段文本看着眼花缭乱
+3. 吐槽下举了个电话网络例子，感觉这个例子一点都不好
+
+

@@ -1,0 +1,90 @@
+Title: 社区及角色发现   
+Date: 2016/06/21 15:51:58       
+Author: sndnyang  
+Slug:  Community-Role-Detection  
+Category: 研究  
+tags: CS, 论文, 社区发现  
+
+[TOC]
+
+# 摘要
+
+{%ratio|知道社区发现这一研究领域吗？&知道&不知道@知道#不知道就尴尬了%}
+
+再来一遍， 不权威定义：社区发现大概就是发现高密度的点群， 群内互连较多；连到群外的较少
+
+
+{%ratio|同理，知道role detection这一研究领域吗？&知道&不知道@知道#呃%}
+
+之前社区发现和role detection（作用检测）两个领域各玩各的， 本篇论文就是把这两个结合起来， 以一种统一的模型结合，来同时处理这两个任务， 并且要做到更好的效果。
+
+## 基本观点
+
+1. 正确地划分出社区， 能促进对点的功能、角色的检测。
+2. 正确地识别点的功能，可以得到更好的网络模型，社区发现也就更好。
+
+### 例子
+
+如图：
+
+两个群、 3种角色
+
+### 主要贡献
+
+写了三个
+
+1. Studying a novel problem of integrating community and role detection in information networks. 这也能算 :(
+2. Proposing a unified probabilistic generative model that defines the link generation probability based on both community and role labels of nodes, and a Gibbs sampling based inference algorithm is proposed.
+3. 在三个人工数据和两个真实数据上实验， 证明了方法对社区/功能检测 和 链接预测上的有效性-- 这也能算？
+
+应该就第二条， 结合了社区、功能检测思想，提出了一个统一（通用）概率生成模型来定义链接生成概率， 并使用Gibbs采样算法（别人的）。
+
+# 正文
+
+除掉实验和公式， 内容不多。
+
+没看过概率图模型的内容， 我估计以下步骤是概率图模型的内容
+
+就像MMDS(Mining Massive Datasets)课程或书里写的， 社区发现分两步：
+
+1. 定义一个生成网络的生成概率模型 generative model
+2. 再根据某种统计推断方法， 确定生成模型里的各个参数
+
+因为本文使用的统计推断算法几乎就是别人原版吧， 所以也就是在生成模型上有点新意——可能也就各种凑合。
+
+## 定义生成模型
+
+### 原模型
+基于 Mixed Membership Stochastic Blockmodel (MMSB) [4](https://www.baidu.com/link?url=0hWpL1H88T3XJqIXC4Fs9pEC5wdWUlgHmOEpF5dMyEslDwBdz9j6ubYR4bKOOByRHsMka3Zwj5dXi1rH4etnbfPEzg8_LFwC_rl6zoDw6WsLqVynPUYG3axemysoEG7Nuk9O4cDs8gEbEQ3rfau3LK&wd=&eqid=bed192060008ba3300000003576903b6)
+
+MMSB的连接生成过程（边生成）如下：
+
+    For each node i:
+        - Draw a group membership distribution vector πi ～ Dirichlet(α)
+
+    For each node pair (i, j):
+        - Draw node i’s latent group Zij ～ Multinomial(πi)
+        - Draw node j’s latent group Zji ～ Multinomial(πj)
+        - Draw the link Eij ～ Bernoulli(SZij ;Zji)
+
+S: group-group interaction probability matrix 
+
+### 改进
+
+Mixed Membership Community and Role (MMCR) Model
+
+大概就是给点多加一个role功能的向量
+
+# 总结
+
+本篇或许是比较新颖地把原本不相关的社区发现和功能检测进行了关联--假设他们是第一个吧。
+
+但给我感觉比较水， 
+
+1. 重复地讲那简单的思想原理——不过其他论文也经常重复当强调
+2. 对整个过程用了种理所当然的描述——the collapsed Gibbs sampling algorithm is straightforward。不得不去看Gibbs这个算法的论文。
+3. 伪代码也没有
+4. 实验数据非常小。 百来个点， 效果好了， 性能没实验， 复杂度说是平方
+5. 感觉英文写作水平不是很好，不知道是真的， 还是我英文差。
+
+
