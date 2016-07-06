@@ -62,7 +62,7 @@ Reichardt and White 提出的 role model， 假设只允许一些社区对之间
 
 如图：
 
-![mmem]()
+![mmem](http://7xt8es.com1.z0.glb.clouddn.com/paper/memm/mmem.png)
 
 1. s和r代表层, node is代表i点在s层
 2. A, C, v 矩阵分别表示 层内邻接、 层间邻接和社区标签
