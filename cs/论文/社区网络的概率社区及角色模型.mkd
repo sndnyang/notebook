@@ -1,0 +1,103 @@
+Title: 社交网络的概率社区角色模型   
+Date: 2016/07/21 15:51:58       
+Author: sndnyang  
+Slug:  probabilistic-Community-Role-model  
+Category: 研究  
+tags: CS, 论文, 社区发现  
+
+[TOC]
+
+# 摘要
+
+{%ratio|知道社区发现这一研究领域吗？&知道&不知道@知道#不知道就尴尬了%}
+
+再来一遍， 不权威定义：社区发现大概就是发现高密度的点群， 群内互连较多；连到群外的较少
+
+{%ratio|同理，知道role detection这一研究领域吗？&知道&不知道@知道#呃%}
+
+之前社区发现和role detection（作用检测）两个领域各玩各的， 本篇论文就是把这两个结合起来， 以一种统一的模型结合，来同时处理这两个任务， 并且要做到更好的效果。
+
+## 基本观点
+
+1. 节点可能属于多个社区，一个点有没有边连到另一个点要视它所属的社区而定。each node has a distribution over the communities.
+2. 节点的属性可以把节点分成多类，可视为节点所承担的角色。each node has a distribution over roles。
+3. 每个点会有一些动作， 跟所属社区和角色有关。
+
+所以我们必须考虑the distributions that the node has over both communities and roles.
+
+### 主要贡献
+
+写了三个
+
+1. incorporate various elements of a social network into a unified probabilistic generative framework. then design a method to estimate the parameters of the model.
+2. use our model to generate a synthetic network with the learned parameters, and verify the superiority of our model, 这也能算？做实验不算创新就算贡献了？
+3. apply the model to two problems|behavior prediction and community detection|verifying its versatility and effectiveness 这条和第二条不都是做实验吗？
+
+# 正文
+
+## 定义
+
+### 社区community： 
+
+Each community has a multinomial distribution over all pairs (v, u), denoted as $\zeta$
+
+### 社区上的点分布node distribution over communities？:
+
+Each node has a multinomial distribution over communities, which is denoted as $\phi$
+
+### 角色role:
+
+1. 每个点可能有多个角色设定。
+2. 每个角色都有一组分布的参数。
+3. 我们这里用 高斯分布。
+
+### 角色上的点分布 nodes distribution over Roles:
+
+Each node has a multinomial distribution over roles, which is denoted as $\theta$
+
+### 动作action
+
+动作多种，比如转发和关注。 y 表示 action
+
+### 社区角色对 community-role pair
+
+the distribution of community-role pairs over actions, denoted as $\rho$
+
+因为actioin y只有两种结果，所以，使用伯努利分布。
+
+## 模型描述
+
+regard a node as a random mixture over communities
+
+网络中边的生成过程描述 如下：
+
+![生成过程]()
+
+define each role as a distribution over attributes and each node is a random mixture over roles
+
+The generative process of all nodes ：
+
+![role生成过程]()
+
+The generative process of the actions:
+
+时间复杂度略
+
+## 推断及参数估计
+
+看不懂。 使用 Gibbs 采样和 EM 算法，两个都不认识。
+
+一大堆公式也不知道是什么意思。
+
+得去补补课再回来补完报告了。
+
+# 总结
+
+这篇A和之后的一篇B挺像的（B引用了A），B的作者里有没有A 呢？
+
+总结不出来什么内容。
+
+这里一个分布， 那里一个分布， 我就没思考为什么用这个、那个分布。推断部分的两个算法都不认识。
+
+最后的实验也没看。还是要看实验才行， 实验看多了， 才能估计模型、方法有没有效果吧。
+
