@@ -71,15 +71,17 @@ regard a node as a random mixture over communities
 
 网络中边的生成过程描述 如下：
 
-![生成过程]()
+![生成过程](http://7xt8es.com1.z0.glb.clouddn.com/paper/communityRole/%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B%E6%8F%8F%E8%BF%B0.png)
 
 define each role as a distribution over attributes and each node is a random mixture over roles
 
 The generative process of all nodes ：
 
-![role生成过程]()
+![role生成过程](http://7xt8es.com1.z0.glb.clouddn.com/paper/communityRole/role%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B%E6%8F%8F%E8%BF%B0.png)
 
 The generative process of the actions:
+
+![action生成过程](http://7xt8es.com1.z0.glb.clouddn.com/paper/communityRole/action%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B%E6%8F%8F%E8%BF%B0.png)
 
 时间复杂度略
 

@@ -1,0 +1,121 @@
+Title: 英语词根与单词 读书笔记
+Date: 2016-09-13 20:15
+category: 其他
+tags: 读书笔记, 英语
+Author: 杨秀隆
+
+[TOC]
+
+# 构词形态变化
+
+## 字母增加
+
+1. 重读闭音节的词根 添加后缀时， 尾辅音字母需要重写， 因而增加一个辅音字母。 例如：  
+    hap+-en-> happen v.发生
+    refer+-al-> referral a.参考的  
+
+2. 古典语词根与后缀或另一词根构成一级派生词时， 增加连接字母。 如希腊词根之后多添加-o-，拉丁词根后多添加-i-
+
+    helic+ o + pter -> helicopter
+    anthrop+ o + logy -> anthropology
+    sent+ i + ment -> sentiment
+    cert+ i + fy -> certify
+
+3. 为保持位于某些位于词尾的重读词根中元音字母读长音， 在词根后添加无语义的构词后缀-e， 使之成为 开音节。 例如：
+
+    in + clud + e -> include
+    pro + mot + e -> promote
+
+## 字母的脱落
+
+主要是词素尾字母的脱落：
+
+1. 在添加后缀时， 某些词根的尾字母 -e脱落， 以保持词根原本的音值。
+
+    write+er=write
+    create+ive=creative
+
+2. 有些以辅音字母结尾的前缀与以相同的辅音字母开头的词根结合时， 前缀尾字母脱落。常见的脱落字母是 -s。
+
+    trans+spir+e = transpire
+    trans + ship = tranship
+
+## 字母的变更
+
+指在构词过程中， 字母或字母组合变成另外的字母或组合：
+
+1. 零级派生情况下， 词根内部元音字母变化， 使单词的词类发生转化。
+
+    full -> fill
+    gold -> gild
+    food -> feed
+
+2. 一级派生时， 某些前缀的尾辅音字母受词根首字母的同化， 变得与词根首字母相同：
+
+    ad + fect = affect
+    com + rect = co.rrect
+    dis + fer = dif.fer
+    ex + fect = ef.fect
+
+3. 二级派生时， 某些原始派生词的词根尾字母在添加 ion, ive, ible等后缀时会发生变化：
+
+    absorb + ion = absorption
+    produce + ive = production
+    respond + ible = resonsible
+
+4. 二级派生时， 以辅音字母+y 结尾的单词在添加派生后缀时， 字母y变为i：
+
+    dry + ly = drily
+    happy + ness = happiness
+
+## 连字符的使用
+
+太明显， 略
+
+4. 用在派生前缀后， 避免该二次派生词与同形的外来借词（原生词）相混淆：
+
+    re-cover - recover
+    re-create - recreate
+    re-sort - resort
+
+# 词义及派生词义
+
+隐性派生词：
+
+1. 字面含义与实用意义之间有一定距离， 但可以通过领会造词意图， 理解词义。
+2. 派生词本义发生了变化， 扩大、缩小、扬升、 贬降、 比喻或引申
+3. 不但包含含义， 还需要一些背景知识——其实举的例子也简单， 真正怕的还是一词多义， 形容词和动词。
+
+# 词性
+
+粘附词根来自 古典语基本单词的**词干**部分
+
+**古典语基本单词的词性**是粘附词根属性的依据
+
+与之等义的英语或汉语单词的词性则可作为判断这种属性的标志。
+
+# 源及形
+
+## 同源异形根
+
+拉丁动词词根， 数量多是两个， 往往分别来自不定式词干和动名词词干。
+
+语音形体变化：
+
+1. 尾辅音向 t 过渡
+2. t,d 变成 s 
+3. 必要的添音与语音同化
+
+1. 词根尾辅音字母 b->pt
+2. p -> pt
+3. g -> ct
+4. c -> ct
+5. v -> (u)t
+6. m -> mpt
+7. x, sc -> (c)t
+8. 其他尾辅音字母 -> t
+9. t, d -> s
+
+## 异源同形根
+
+
