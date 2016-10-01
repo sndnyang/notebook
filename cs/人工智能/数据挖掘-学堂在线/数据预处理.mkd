@@ -20,19 +20,163 @@ tags: CS, 机器学习, 人工智能
     - Data types
     - imbalanced datasets
 
-# 数据缺失
+## 主要内容
 
-可能的原因：
+1. 数据清洗   
+    1. 数据缺失
+    2. 离群点检测
+    3. 重复检测
+
+2. 数据转换和采样
+3. 数据标准化
+4. 特征选择与主成分分析
+5. 数据描述与可视化分析
+
+# 数据清洗
+
+## 数据缺失 
+
+数据缺失的 可能原因：
 
 - 设备故障
 - 无数据
 - 不适用——如体检男女项目不同
 
-## 处理方式
+不同的类型：
+
+- 完全随机缺失
+- 条件随机缺失--概率跟某些属性有关， 比如女生相对不愿透露体重
+- 非随机缺失
+
+### 处理方式
 
 1. 忽略
 2. 手工补充
 3. 自动填充--全局参数、 均值或中值、 最可能的值
 
+### 练习
 
+[数据缺失python练习(未实现)](http://sndnyang.github.io/404.html)
+
+## 离群点outlier
+
+一般思路， LOF(local outliner factor)， 点与若干相邻点的相邻距离， 与 相邻点自己的相邻距离相比较
+
+[离群点检测python练习(未实现)](http://sndnyang.github.io/404.html)
+
+## 重复数据 duplicate
+
+使用滑动窗口技术， 前提是相似、重复的数据是相邻存储的
+
+需要一定的人工分析
+
+[重复检测python练习(未实现)](http://sndnyang.github.io/404.html)
+
+# 类型转换
+
+转换工作主要有：
+
+- 类型转换(type conversion)，如离散和连续值
+- 正则化(normalization)， 使用相同的scale
+- 采样(sampling)
+
+## 类型
+
+- 连续
+- 离散
+- 序数(ornial)，如点评的普通、好、非常好
+- 纯名词， 标签。方法比如 One-Hot Encoding One-Hot编码,又称为一位有效编码。
+- 字符串
+
+# 采样
+
+统计是获取数据成本高。
+
+1. 数据太多， 减少数据
+2. 调整分布， 不平衡数据的重新采样
+
+## 聚集 aggregation
+
+- change of scale:  
+    城市聚集到省， 日期聚集成月份
+- 更多稳定性， 更少变化
+
+## 不平衡数据集
+
+使用新的评估方式:
+
+$$F-measure = \frac{2 \times Precission \times Recall} {Precision + Recall}$$
+
+$ Precision = \frac{TP}{TP+FP}, Recall= \frac{TP}{TP+FN}$
+
+
+## 其他方法
+
+1. over-sampling
+2. boundary-sampling
+
+# 标准化
+
+使用相同的scale比例尺， 避免特征上的不平衡。
+
+## 主要方案
+
+1. 最小最大标准化（0-1标准化）： $v'=\frac{v-min}{max - min}$
+2. z-score标准化（针对正态分布无上下界数据）:$v'=\frac{v-\mu}{\sigma}$
+
+
+# 数据描述与可视化
+
+## 描述方法
+
+1. 算术平均值 mean
+2. 中位数 median
+3. 某模式：如次数、频率最高的值
+4. 方差（变化率）
+
+## 相关度
+
+皮尔森pearson相关系数：
+
+$$r_{A,B} = \frac{\sum(AB)-n\hat{A}\hat{B}}{(n-1)\sigma_A\sigma_B}$$
+
+pearson chi-square test:
+
+$$\chi^2 = \sum\frac{(Observed - Expected)^2}{Expected}$$
+
+## 可视化
+
+可以推荐课程，[coursera可视化](https://www.coursera.org/learn/datavisualization) 虽然好像太理论？
+
+# 特征选择
+
+属性太多，也要“采样”
+
+那么什么是好的属性？
+
+介绍熵(Entropy)、 信息增益(Information Gain)等 决策树也用的技术 [决策树(待编写)]((http://sndnyang.github.io/404.html) 用于评估特征
+
+## 特征的搜索
+
+确定性：
+
+1. 穷举exhaustive
+2. 分支限界branch and bound
+
+启发式：
+
+1. top K
+2. 序列前向选择sequentail forward selection，已知k个最优， 试k+1最优
+3. 序列反向选择sequentail backward selection
+
+# 特征提取feature extraction
+
+主要是 主成分分析 principal component analysis
+
+## 主成分分析
+
+基本就是线性代数的 特征值、特征向量[特征值(待编写)]((http://sndnyang.github.io/404.html)求解， 好像奇异值分解[奇异值(待编写)]((http://sndnyang.github.io/404.html)也行。
+
+
+## 线性判别分析 linear Discriminant Analysis
 
