@@ -3,7 +3,7 @@ Date: 2016-10-08 19:18:30
 slug: machine-learning-catalog
 category: 机器学习   
 tags: CS, 机器学习, 人工智能  
-Modified: 2016-10-08 20:18:30
+Modified: 2016-10-28 20:18:30
 
 [TOC]
 
@@ -12,6 +12,10 @@ Modified: 2016-10-08 20:18:30
 
 [思维导图](http://zhimind.com/map/f349e9b2-1412-44f4-a18e-618825613bcb)
 
+- 基础概念
+    - [机器学习定义](http://www.zhimind.com/tutorial/acd9371a-1565-429c-9cdc-c275937e4523)
+    - [机器学习主要类型](http://www.zhimind.com/tutorial/3b230a16-7472-42dc-b9c6-ced54c9fe9f7)
+    - [机器学习三要素]()
 - 线性模型  
     - 线性回归  
         - [线性回归基础](http://zhimind.com/tutorial/c4a7287c-650a-4509-8e4d-6b166a6173b2?id=f349e9b2-1412-44f4-a18e-618825613bcb&name=%E5%9F%BA%E7%A1%80&parent=%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92)
