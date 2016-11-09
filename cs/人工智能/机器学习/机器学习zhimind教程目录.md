@@ -2,7 +2,7 @@ Title: zhimind-机器学习目录
 Date: 2016-10-08 19:18:30
 slug: machine-learning-catalog
 category: 机器学习   
-tags: CS, 机器学习, 人工智能  
+tags: CS, 机器学习, 人工智能, zhimind系列   
 Modified: 2016-10-28 20:18:30
 
 [TOC]
