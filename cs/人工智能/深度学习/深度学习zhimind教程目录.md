@@ -25,9 +25,14 @@ Modified: 2016-10-22 20:18:30
         - [逻辑回归](http://www.zhimind.com/tutorial/logistic-regression-foundation)
         - [其他模型](http://www.zhimind.com/tutorial/models-of-neurons)
     - 学习方式  
-        - [前向传播#todo](http://www.zhimind.com/tutorial/feed-forward-nn)
-        - [反向传播#todo](http://www.zhimind.com/tutorial/backpropagation-nn)
+        - [前向传播](http://www.zhimind.com/tutorial/feed-forward-nn)
+        - [反向传播](http://www.zhimind.com/tutorial/backpropagation-nn)
 - 深度网络#todo
+    - 自编码器auto encoder#todo
+    - 卷积神经网络cnn#todo
+    - 递归神经网络rnn#todo
+    - 等等
     
 待更新
-    
+
+在看 Hinton在Coursera 开的 [neural network for machine learning](https://www.coursera.org/learn/neural-networks)

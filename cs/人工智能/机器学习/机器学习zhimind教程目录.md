@@ -10,12 +10,16 @@ Modified: 2016-10-28 20:18:30
 
 # 机器学习目录
 
+自引用：[目录链接](http://blog.zhimind.com/machine-learning-catalog.html)
+
 [思维导图](http://zhimind.com/map/f349e9b2-1412-44f4-a18e-618825613bcb)
+
+鼠标停在结点上时，如果有链接则会显示出来， 不然就看这个目录吧， 目录和导图转换还没有实现。
 
 - 基础概念
     - [机器学习定义](http://www.zhimind.com/tutorial/acd9371a-1565-429c-9cdc-c275937e4523)
     - [机器学习主要类型](http://www.zhimind.com/tutorial/3b230a16-7472-42dc-b9c6-ced54c9fe9f7)
-    - [机器学习三要素]()
+    - [机器学习三要素](http://www.zhimind.com/tutorial/three-elememts-in-machine-learning)
 - 线性模型  
     - 线性回归  
         - [线性回归基础](http://zhimind.com/tutorial/c4a7287c-650a-4509-8e4d-6b166a6173b2?id=f349e9b2-1412-44f4-a18e-618825613bcb&name=%E5%9F%BA%E7%A1%80&parent=%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92)
@@ -24,7 +28,7 @@ Modified: 2016-10-28 20:18:30
         - [局部加权回归](http://zhimind.com/tutorial/7eef4776-2c9a-48e7-adfa-02aabd4cea7d?id=f349e9b2-1412-44f4-a18e-618825613bcb&name=%E5%B1%80%E9%83%A8%E5%8A%A0%E6%9D%83%E5%9B%9E%E5%BD%92&parent=%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92)
     - 逻辑回归  
         - [逻辑回归基础](http://zhimind.com/tutorial/154bee75-7cb6-4c3c-807f-403659480217?id=f349e9b2-1412-44f4-a18e-618825613bcb&name=%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%9F%BA%E7%A1%80&parent=%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92)
-        - [牛顿迭代法（未）](#)
+        - [牛顿迭代法](http://www.zhimind.com/tutorial/newton-methods)
     - 指数分布簇
     - 广义线性模型
     
