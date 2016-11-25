@@ -1,4 +1,4 @@
-Title: zhimind-深度学习目录  
+Title: 知维图系列-深度学习目录  
 Date: 2016-10-28 22:18:30
 slug: deep-learning-catalog
 category: 机器学习   
@@ -9,7 +9,7 @@ Modified: 2016-10-22 20:18:30
 
 # 深度学习目录
 
-自引用：[目录链接](http://blog.zhimind.com/deep-learning-catalog.html)
+自引用：[知维图系列-深度学习目录链接](http://blog.zhimind.com/deep-learning-catalog.html)
 
 [思维导图](http://zhimind.com/map/f349e9b2-1412-44f4-a18e-618825613bcb)
 
