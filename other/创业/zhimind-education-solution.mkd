@@ -1,0 +1,74 @@
+Title: zhimind-education-solution
+slug: zhimind-entire-solution-english
+Date: 2017-2-08 22:13:45
+Modified: 2017-2-08 22:13:45 
+category: 脑洞  
+tags: zhimind, 脑洞 
+
+[TOC]
+
+# [知维图](zhimind.com)
+
+[知维图](zhimind.com) to create interactive and heuristic,  flexible education, to upgrade the MOOC, online education.
+
+This blog is a brief solution, lacking details and technologies description.
+
+## Problems and demands:
+
+1. easy to distraction: People are easy to distract when watching videos and reading textbooks. So they don't think and learn something.
+2. no feedback: Teachers and students don't know how well they learn, and there is a huge gap between knowledges and applications namely contents and quizzes.
+3. bad way: simply to teach, cram students. no ideas about how to guide students to discover and explore.
+4. knowledge manage: not visuable
+5. hard to combine online education or MOOC with traditional school education
+
+### Note
+
+Maybe those problems above are my illusion. The first thing is to verify this problems. if you have any ideas , I'm looking forward to talking with you.
+
+## solution ideas
+
+1. Embeded many tiny questions, like Udacity,Codecademy, much more questions than Coursera. Improvement: many tiny questions instead of heavy questions in teaching, not let it to break the process of learning.
+2. more forms of tiny questions. So we can get more detailed and exact datas on the status of learning process. Then we can visualize it and do many researches on them.
+3. Due to tiny questions and heuristic way,  reorganizing the teaching contents. Use questions to guide students to think and discover, and we can emphasize the scientific methods and principles.
+4. use mindmap to organize the knowledge points and show the study times and master levels(how well)
+
+### potential problems
+
+1. maybe no experiment datas to prove it's effective and efficient. we don't know the effect of heuristic education, especially by Artificial Intelligence.
+2. can Artificial Intelligence technologies(like nlp) support it and provide enough intelligence?
+3. it's much harder to create the materials and resources. Experts have no idea about how they are thinking.
+
+### benifits if it works
+
+1. reduce the distraction.
+-  feedback datasets by answering the tiny questions. for further researches on study types and personal education.
+-  lead students to think
+-  help students to form excellent learning habits and master efficient learning methods.
+-  combine with **offline school education**, reduce the burden of teachers on teaching to better support students.
+-  integrate heuristic way into quiz questions. To Provide hints but not break students' thinking.  it can build question banks.
+-  further ... for jobs and so on
+
+
+## Technology Form
+
+based on text instead of video, it can have many forms.
+
+### advantages
+
+1. easy to edit,modify
+2. more flexible for tiny question than video
+3. it can apply on quiz, problem sets.
+4. many forms like interactive textbooks, chatbots, VR(virtual reality)
+
+### entire process
+
+1. organize knowledge points in mindmaps and tables of contents, and create links with tutorials and quizzes. Chinese example ：[机器学习导图及目标](http://www.zhimind.com/map/f349e9b2-1412-44f4-a18e-618825613bcb)  
+2. write tutorials（in markdown，finding a better, more flexible form）：  
+    - interactive textbooks [svm maximum margin](http://www.zhimind.com/tutorial/ba118fe2-058e-427a-b18e-821925583f2b)
+    - chatbots
+    - VR. speech recognition and speech generation, Person figure generation for interactive VR
+    
+mainly to understand learners' answers and response correctly. it needs AI and natural language process.
+
+# Thank you
+
