@@ -13,6 +13,8 @@ tags: zhimind, 脑洞
 
 This blog is a brief solution, lacking details and technologies description.
 
+[open source repo](https://github.com/sndnyang/zhimind) a lot to do
+
 ## Problems and demands:
 
 1. easy to distraction: People are easy to distract when watching videos and reading textbooks. So they don't think and learn something.

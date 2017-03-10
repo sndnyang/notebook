@@ -13,6 +13,8 @@ tags: zhimind, 脑洞
 
 只是大体方案， 细节和技术缺少数据、实验、条件还没法全部搞定。
 
+[源代码链接](https://github.com/sndnyang/zhimind)  新手重新造轮子（看不懂别人的，尴尬），差很多，甚至永远完成不了。
+
 ## 问题和需求
 
 Problems and demands:
