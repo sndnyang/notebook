@@ -50,6 +50,16 @@ Maybe those problems above are my illusion. The first thing is to verify this pr
 -  integrate heuristic way into quiz questions. To Provide hints but not break students' thinking.  it can build question banks.
 -  further ... for jobs and so on
 
+### student-centered
+
+I think "student-centered" is to center on how to guide students to think.  there are three levels of guided think:
+
+1. purely think namely do some quizzes or answer some questions like what Coursera and others MOOC platform do. They don't care the essense of those questions. Sometimes a simple recall is designed as a question.  Just 10 seconds, I even don't it as a recall.
+2. attract students' attension. Put a question, then let students find the answers from following contents. Finally students answer the question. But it's that teachers think students should think , instead of student-centered.
+3. ideal level, heuristic education. Guiding a exploratory thinking. It starts from the real problems from life or previous knowledge, including find the problems. Then students will think about it, explore it with some principles, methods guided by teachers. Students will finish the whole process from finding it,  trial and error to finally solving it.
+
+I think, this solution zhimind.com has the potential to implement this mode. But just potential. It's really difficult.
+
 
 ## Technology Form
 
