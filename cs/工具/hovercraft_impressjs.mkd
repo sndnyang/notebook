@@ -1,0 +1,104 @@
+Title: 利用hovercraft编写impressjs幻灯片  
+Slug: hovercraft-to-impressjs-slides
+Date: 2017-04-12 11:07:30
+Tags: 可视化, 演讲  
+
+[TOC]
+
+# impress.js介绍
+
+impress.js 是一个Javascript程序包，它的功能是让你制作出令人眩目的内容展示效果，主要里利用了CSS 3D Transforms 里的旋转，扭曲，缩放等特性，所以，只有最新版的Firefox，或谷歌浏览器或苹果浏览器才能看到它产生的效果，好像在还未出世的IE 10 浏览器里也可以用。
+
+[官方网站](https://github.com/impress/impress.js)
+
+[官方示例](http://impress.github.io/impress.js/#/overview)
+
+{%radio|是不是很炫酷呢？&是&普通@#普通:您的眼光高！%}
+
+# 可视化编辑Strut
+
+[官方网站](https://github.com/tantaman/Strut)
+
+[官方示例](http://strut.io/editor/)
+
+可视化在线编辑, 可能用这个就够了， 不用下面的了
+
+# hovercraft介绍
+
+Hovercraft! is a tool to make impress.js presentations from reStructuredText. For a quick explanation, see the [official demo](http://regebro.github.com/hovercraft).
+
+[官方网站](https://github.com/regebro/hovercraft)
+
+pip3 install hovercraft
+
+主要语法请见[官方文档](https://hovercraft.readthedocs.io/en/latest/presentations.html)
+
+# 制作建议
+
+## x,y,z坐标关系
+
+### 中心
+
+没搞错的话， data-x, data-y 指代一张 ppt 的中心点坐标， 不是它的左上角。
+
+z负值是把镜头拉远、拉大， z正值相反（出屏幕方向）
+
+### 位置
+
+data-x data-y 是以页面中心为原点 0,0， 
+
+x为正值， 代表向左侧移动， 负值就是向右侧移动
+
+y为正值， 代表在下侧（就是屏幕分辨率的方向， 左上角是原点），负值在上方。
+
+### 示例 
+
+![coordinate](http://7xt8es.com1.z0.glb.clouddn.com/blog/impressjs_overview.png)
+
+可以看到， 官方示例，转入 overview状态后， 两条红线相交处为 0, 0原点， 往右 x 增大， 往下 y 增大
+
+### 建议
+
+从全局角度
+
+## scale关系
+
+就是放大倍数， < 1 代表缩小
+
+## 旋转
+
+先根据 data-x , y移动后， 以该点为中心进行旋转
+
+## 2D
+
+data-rotate = 通过一个数字度数来确定旋转你的幻灯片, 顺时针
+
+这个简单
+
+## 3D
+
+data-rotate-x = 为3D用，这个数字度数是它应该相对x轴旋转多少度。（前倾/后仰）
+
+data-rotate-y = 为3D用，这个数字度数是它应该相对y轴旋转多少度。 （左摆/右摆）
+
+data-rotate-z = 为3D用，这个数字度数是它应该相对z轴旋转多少度。
+
+这个难，需要多尝试、 总结
+
+## 全局总览
+
+建议制作全局总览， 方法： 创建一张新的空幻灯片， 设置相应的 data-x\y\scale
+
+计算其他全部幻灯片的 x, y的中心， 及大小， 进行放大。
+
+如：
+
+    :data-x: 3000
+    :data-y: 1500
+    :data-scale: 10
+
+
+## 建议
+
+一张幻灯片的大小 即屏幕分辨率， 所以设计时要注意不要重叠情况
+
