@@ -1,0 +1,69 @@
+Title: 用开源项目Pelican学Python  
+Slug: learn-python-by-opensource-project-pelican  
+Date: 2017-04-14 11:32:30  
+Authors: sndnyang sndnyang.github.io
+Modified: 2017/4/14 14:36:24
+Category: Python
+Tags: Python, 代码阅读
+Summary: 学习Pelican的源代码，掌握一些Python的开发技巧
+
+[TOC]
+
+# 总纲
+
+通过阅读Pelican的源码， 掌握一些Python开发实践方法， 这些方法可能也能用在其他
+语言的开发上。
+
+要求读者掌握基本Python语法——严格来说，Python语法很简单，只要看懂一种编程语言
+都可以了。
+
+[Pelican官网](http://getpelican.com/)， Pelican是Python语言编写的静态网站生成器
+，主要可以把Markdown，RestructuredText格式的文件转成HTML。
+
+其他部分不作介绍， 安装 pip install pelican，然后就开始吧。
+
+# 按代码顺序分析
+
+在pelican模块的__init__.py文件开始， 第一步main函数
+
+1. parse_arguments函数, 命令行参数处理模块 argparser
+2. init函数，日志记录模块 logging
+3. get_instance函数， 额外模块导入的模块 imp.load_source
+4. 
+
+# pelican的运行
+
+pelican 创建项目这一块先不讨论， 直接从运行开始
+
+MakeFile里的 make html 对应 
+
+    pelican $(INPUTDIR) -o $(OUTPUTDIR) -s $(BASEDIR)/pelicanconf.py $(PELICANOPTS)
+
+shell\makefile部分略。
+
+
+我们首先看到了 *命令行参数*， 有像 inputdir 这种， 也有像 -o outputdir 这种带前
+置选项参数的。
+
+读者也许知道 linux程序很多是命令行的， 所以经常有这种参数的设置、解析需求， 所
+以我们得到的第一个要学习的内容就是 命令行参数设置、解析的最佳实践
+
+在 pelican模块__init__.py里main函数的第一行 parse_arguments函数。
+
+第二行init函数，初始化日志记录器
+
+第三行get_instance，导入模块、参数
+
+## 命令行参数
+
+有现成的轮子可以使用， Python内置argparse模块就是最佳实践， <[argparse使用](/python-argparse.html)
+
+## 日志
+
+Python内置模块 logging，最佳实践， <[logging使用](/Python-logging.html)
+
+## 模块导入
+
+Python导入模块 <[模块导入](/Python-module-import.html)
+
+Flask.config.from_pyfile('flaskapp.cfg')

@@ -1,0 +1,41 @@
+Title: Python模块导入  
+Slug: Python-module-import  
+Date: 2017/4/14 14:10:27
+Authors: sndnyang sndnyang.github.io
+Category: Python  
+Modified: 2017/4/14 14:31:17
+Tags: Python
+Summary: 关于Python的模块导入方式    
+
+[TOC]
+
+# 基本导入方式
+
+Python初学者 都知道在主代码文件中导入子模块的方式，子模块在下层文件夹，则
+
+    import sub.subsub.module
+
+当然，还有一种形式
+
+    from a.b import c
+
+还可以改名
+
+    import x.y.z as fool
+    from a.b import c as fool
+
+另外， 还能通过环境变量 PATH 路径查找模块并导入——python查看方式
+
+    os.environ['PATH']
+
+# 绝对路径导入
+
+对于非子目录下、又非PATH路径下的模块，有时也要导入，比如读取 Python代码写的配置
+
+1. 添加到查找路径中  
+        import sys 
+        sys.path.append('C:/full/path')
+2. 使用模块导入模块 [Python load类模块](/Python-module-for-load-module.html)  
+        imp.load_source
+        3.3以上  from importlib.machinery import SourceFileLoader
+
