@@ -2,14 +2,14 @@ Title: 用开源项目Pelican学Python
 Slug: learn-python-by-opensource-project-pelican  
 Date: 2017-04-14 11:32:30  
 Authors: sndnyang sndnyang.github.io
-Modified: 2017/4/14 14:36:24
+Modified: 2017/4/15 14:24:31
 Category: Python
 Tags: Python, 代码阅读
 Summary: 学习Pelican的源代码，掌握一些Python的开发技巧
 
 [TOC]
 
-# 总纲
+# 介绍
 
 通过阅读Pelican的源码， 掌握一些Python开发实践方法， 这些方法可能也能用在其他
 语言的开发上。
@@ -22,18 +22,14 @@ Summary: 学习Pelican的源代码，掌握一些Python的开发技巧
 
 其他部分不作介绍， 安装 pip install pelican，然后就开始吧。
 
-# 按代码顺序分析
+此外， 主要介绍Python里调用逻辑及已经有的好用的、但不知道时会重复创造的轮子(标准
+库)，而像 os，sys，random，math等不会重写的模块将跳过。
 
-在pelican模块的__init__.py文件开始， 第一步main函数
-
-1. parse_arguments函数, 命令行参数处理模块 argparser
-2. init函数，日志记录模块 logging
-3. get_instance函数， 额外模块导入的模块 imp.load_source
-4. 
+第三方开发的 模块 暂不在介绍范围，除非特别有用
 
 # pelican的运行
 
-pelican 创建项目这一块先不讨论， 直接从运行开始
+pelican 创建项目这一块先不讨论， 直接从运行开始， 过一遍执行过程、调用过程
 
 MakeFile里的 make html 对应 
 
@@ -41,6 +37,7 @@ MakeFile里的 make html 对应
 
 shell\makefile部分略。
 
+## 命令行参数
 
 我们首先看到了 *命令行参数*， 有像 inputdir 这种， 也有像 -o outputdir 这种带前
 置选项参数的。
@@ -48,22 +45,101 @@ shell\makefile部分略。
 读者也许知道 linux程序很多是命令行的， 所以经常有这种参数的设置、解析需求， 所
 以我们得到的第一个要学习的内容就是 命令行参数设置、解析的最佳实践
 
+有现成的轮子可以使用， Python内置argparse模块就是最佳实践， [argparse使用][1]
+
 在 pelican模块__init__.py里main函数的第一行 parse_arguments函数。
+
+## 日志记录
+
+其次，我们需要一个日志记录工具， 不能单靠print打天下， 于是使用内置logging模块
+， [logging日志记录][2]
 
 第二行init函数，初始化日志记录器
 
-第三行get_instance，导入模块、参数
+## 额外模块导入
 
-## 命令行参数
+Python用到了很多的模块，内置的、第三方的，但仍然难免有一些作为参数、配置文件的
+模块需要导入， [模块导入][3]
 
-有现成的轮子可以使用， Python内置argparse模块就是最佳实践， <[argparse使用](/python-argparse.html)
+    get_instance > read_settings > get_settings_from_file
 
-## 日志
+Pelican 的配置文件 pelicanconf.py 是一堆的键key, 值value ，所以我们需要最终得到
+一个字典dict，而不是一个模块module，所以我们需要下一步，从模块中读取出一个字典
 
-Python内置模块 logging，最佳实践， <[logging使用](/Python-logging.html)
+## 自省反射
 
-## 模块导入
+>[什么是自省反射](introspection-reflection.html)
 
-Python导入模块 <[模块导入](/Python-module-import.html)
+Python中的自省反射使用 [inspect][4]
 
-Flask.config.from_pyfile('flaskapp.cfg')
+接下来，这个配置项 要和默认、命令行配置项进行合并，但我们希望这两个配置项的变量
+仍保持独立， 用另一个变量记录合并后的值。
+
+## 复制
+
+手写的话，可能是初始化一个新字典，然后分别遍历两个字典写入新字典里。
+
+我们希望能直接复制一个新字典，然后更新， 但我们知道 Python赋值是增加一个引用，
+即浅复制， 我们需要深复制， 所以使用 copy.deepcopy, [copy复制模块][5]
+
+之后用另一项值进行更新update，是字典dict的方法， [字典dict](Python-dict.html)
+
+再完成一大堆配置后（没有值得一提的点），程序开始正式运行、解析
+
+## 主程序调用
+
+1. 调用内容生成器，生成 [pelican内容生成器][6]
+    p = get_generator_classes
+    p.generate_context()
+2. 调用输出模块 [pelican-writer][7]
+    writer = self.get_writer()
+    p.generate_output(writer)
+
+# 按代码顺序分析
+
+在pelican模块的__init__.py文件开始， 第一步main函数
+
+1. parse_arguments函数:
+    命令行参数处理模块 argparser
+2. init函数:
+    日志记录模块 logging
+3. get_instance > read_settings > get_settings_from_file:  
+    1. 额外模块导入的模块:
+        imp.load_source
+    2. get_settings_from_module:   
+        1. 深度复制（？） copy.deepcopy，copy模块
+        2. 自省、反射机制 inspect.getmembers, inspect
+4. 写不下去了~~~
+
+
+# 总结
+
+编程只要个结果不难，但要正确、稳定、高效就难了，但幸运的是，我们能清楚地判断它
+是否正确、稳定、高效，相对英语口语和写作就比较难自评了。
+
+所以多阅读优秀程序的源码， 总结一些架构的思想、 程序实现方式，既以帮助编程，也
+能帮助调试。
+
+# Pelican系列链接
+
+- [导论](learn-python-by-opensource-project-pelican.html)
+- [生成模块](pelican-generator.html)
+- [输出模块](pelican-writer.html)
+
+# 链接
+
+[1]: python-argparse.html          "命令行参数解析"
+[2]: Python-logging.html           "日志记录"
+[3]: Python-module-import.html     "模块导入"
+[4]: Python-inspect.html           "自省反射"
+[5]: Python-copy.html              "复制"
+[6]: pelican-generator.html        "Pelican生成器"
+[7]: pelican-writer.html           "Pelican输出模块"
+
+- <[命令行参数解析](python-argparse.html)
+- <[日志记录](Python-logging.html)
+- <[模块导入](Python-module-import.html)
+- <[深度复制](python-copy.html)
+- <[反射自省机制](python-inspect.html)
+- >[字典dict](Python-dict.html) 
+- >[什么是自省反射](introspection-reflection.html)
