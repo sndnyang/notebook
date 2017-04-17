@@ -2,7 +2,7 @@ Title: 数据预处理
 Date: 2016-09-28 17:13
 slug: data-preprocessing-in-dm-xuetangx
 Author: sndnyang
-Modified: 2016-09-28 17:13
+Modified: 2017/4/17 19:23:30
 Category: 机器学习   
 tags: CS, 机器学习, 人工智能 
 
@@ -56,13 +56,13 @@ tags: CS, 机器学习, 人工智能
 
 ### 练习
 
-[数据缺失python练习(未实现)](http://sndnyang.github.io/404.html)
+[数据缺失python练习#TODO](data-missing-python.html)
 
 ## 离群点outlier
 
 一般思路， LOF(local outliner factor)， 点与若干相邻点的相邻距离， 与 相邻点自己的相邻距离相比较
 
-[离群点检测python练习(未实现)](http://sndnyang.github.io/404.html)
+[离群点检测python练习#TODO](outliner-detect-python.html)
 
 ## 重复数据 duplicate
 
@@ -70,7 +70,7 @@ tags: CS, 机器学习, 人工智能
 
 需要一定的人工分析
 
-[重复检测python练习(未实现)](http://sndnyang.github.io/404.html)
+[重复检测python练习#TODO](duplicate-data-python.html)
 
 # 类型转换
 
@@ -154,7 +154,7 @@ $$\chi^2 = \sum\frac{(Observed - Expected)^2}{Expected}$$
 
 那么什么是好的属性？
 
-介绍熵(Entropy)、 信息增益(Information Gain)等 决策树也用的技术 [决策树(待编写)]((http://sndnyang.github.io/404.html) 用于评估特征
+介绍熵(Entropy)、 信息增益(Information Gain)等 决策树也用的技术 [决策树#TODO](www.zhimind.com/tutorial/determine-tree-basic) 用于评估特征
 
 ## 特征的搜索
 
@@ -175,7 +175,7 @@ $$\chi^2 = \sum\frac{(Observed - Expected)^2}{Expected}$$
 
 ## 主成分分析
 
-基本就是线性代数的 特征值、特征向量[特征值(待编写)]((http://sndnyang.github.io/404.html)求解， 好像奇异值分解[奇异值(待编写)]((http://sndnyang.github.io/404.html)也行。
+基本就是线性代数的 特征值、特征向量[特征值#TODO]((http://sndnyang.github.io/404.html)求解， 好像奇异值分解[奇异值#TODO]()也行。
 
 
 ## 线性判别分析 linear Discriminant Analysis
