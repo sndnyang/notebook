@@ -2,7 +2,7 @@ Title: 用开源项目Pelican学Python
 Slug: learn-python-by-opensource-project-pelican  
 Date: 2017-04-14 11:32:30  
 Authors: sndnyang sndnyang.github.io
-Modified: 2017/4/15 14:24:31
+Modified: 2017/4/18 13:30:13
 Category: Python
 Tags: Python, 代码阅读
 Summary: 学习Pelican的源代码，掌握一些Python的开发技巧
@@ -89,11 +89,13 @@ Python中的自省反射使用 [inspect][4]
 ## 主程序调用
 
 1. 调用内容生成器，生成 [pelican内容生成器][6]
-    p = get_generator_classes
+    p = get_generator_classes()
     p.generate_context()
 2. 调用输出模块 [pelican-writer][7]
     writer = self.get_writer()
     p.generate_output(writer)
+
+signal 信号部分没看明白
 
 # 按代码顺序分析
 
