@@ -2,8 +2,8 @@ Title:  自动机作业1-正则表达式
 Date: 2014-9-8        
 Author: sndnyang  
 Slug: automata-hw1   
-Category: CS
-tags: CS, 算法, 自动机  
+Category: 计算机科学
+tags: 计算机科学, 算法, 自动机  
 
 [TOC]
 
