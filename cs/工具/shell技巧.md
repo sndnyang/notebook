@@ -3,7 +3,7 @@ Slug: shell-tricks
 Date: 2017/4/17 18:55:05
 Authors: sndnyang sndnyang.github.io
 Category: shell  
-Modified: 2017/4/17 18:58:53
+Modified: 2017/4/24 9:18:56
 Tags: shell  
 
 [TOC]
@@ -89,3 +89,18 @@ awk 和 c 的几乎一样
 
 ## 判断操作系统 uname
 
+
+## 历史命令记录
+
+!的使用
+- !!重复前一个命令
+- !字符 重复前一个以“字符”开头的命令
+- !num 按照history命令输出中的序号来重复对应命令
+- !?abc 重复前一个包含abc的命令 *这个最好用*
+- !-n 重复n个命令之前的那个命令
+- !$ 上一个命令的最后一个参数
+
+按键组合:
+
+⑴使用up和down键来上下浏览之前执行的命令
+⑵键入ctr+r来在命令历史中搜索命令
