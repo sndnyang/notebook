@@ -1,0 +1,25 @@
+Title: web后端功能
+Slug: web-backend-function    
+Date: 2017/5/14 16:50:16
+Authors: sndnyang sndnyang.github.io
+Modified: 2017/5/14 16:55:19
+Category: web开发
+Tags: web, 网站, 后端    
+
+[TOC]
+
+# 验证码
+
+    code_img, strs = create_validate_code()
+    session['code_text'] = strs
+    buf = StringIO.StringIO()
+    code_img.save(buf, 'JPEG', quality=70)
+
+    buf_str = buf.getvalue()
+    response = app.make_response(buf_str)
+    response.headers['Content-Type'] = 'image/jpeg'
+    return response
+
+函数create_validate_code代码见[validation.py](https://github.com/sndnyang/zhimind/blob/master/wsgi/mindmap/validation.py)，不太看得懂
+
+

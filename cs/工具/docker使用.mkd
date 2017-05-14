@@ -1,0 +1,25 @@
+Title: docker使用
+Slug: notes-on-using-docker    
+Date: 2017/5/6 23:43:29
+Authors: sndnyang sndnyang.github.io
+Modified: 2017/5/6 23:46:53
+Tags: 虚拟机    
+
+[TOC]
+
+# 启动下载 boot2docker失败
+
+从输出的日志中，找到地址(github.com/xxxxx)，使用下载工具下载， 并存放到 用户主
+目录/.docker/machine/cache文件夹下
+
+# 配置镜像地址 
+
+新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。
+
+请在该配置文件中加入（没有该文件的话，请先建一个）：
+
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+
+备选： DaoCloud 和 阿里云， 但都要注册
