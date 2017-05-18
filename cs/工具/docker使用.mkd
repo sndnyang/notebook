@@ -2,7 +2,7 @@ Title: docker使用
 Slug: notes-on-using-docker    
 Date: 2017/5/6 23:43:29
 Authors: sndnyang sndnyang.github.io
-Modified: 2017/5/6 23:46:53
+Modified: 2017/5/18 18:10:01
 Tags: 虚拟机    
 
 [TOC]
@@ -23,3 +23,21 @@ Tags: 虚拟机
 }
 
 备选： DaoCloud 和 阿里云， 但都要注册
+
+# 配置存储路径
+
+镜像images, 容器Container 的路径， 不要放在C盘
+
+文件同上
+
+    { "graph": "E:\\vm\\docker" }
+
+据另一篇文章 [Windows下安装docker](http://www.linuxidc.com/Linux/2016-07/133506.htm)描述：
+
+需要在 .bash_profile 或 .bashrc 里配置环境变量：
+
+    export MACHINE_STORAGE_PATH='H:\docker'
+
+关闭后，在H盘创建名为docker的文件夹，在其下创建名为cache的文件夹，将安装文件下的boot2docker.iso拷贝到该文件夹：
+
+
