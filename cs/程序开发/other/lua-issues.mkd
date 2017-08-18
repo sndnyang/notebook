@@ -1,0 +1,54 @@
+Title: lua问题
+Slug: lua-issues    
+Date: 2017/5/22 8:58:11
+Authors: sndnyang sndnyang.github.io
+Modified: 2017/5/22 9:01:38
+Category: 软件开发    
+Tags: 软件开发, 编译    
+
+[TOC]
+
+# windows编译缺头文件
+
+## 问题描述：
+
+在win7系统， 使用 luarocks install luasocket 时报错：
+
+	src/mime.c(5): fatal error C1083: Cannot open include file: 'string.h': No such file or directory
+
+注：已经安装过 VS20XX(VS2013开始有社区版，之前的express是免费的，2017年已经是VS2017，真丫的大)，所以不会存在真没有头文件的问题。
+
+## 解决方案
+
+[stackoverflow](http://stackoverflow.com/questions/33006269/compiling-luasocket-cannot-open-file-string-h)
+
+前两步是安装 LuaRocks（更之前是安装Lua），明显的。关键是报这个错，就意味着头文件、库文件的路径没找到，所以要把路径加进来。
+
+给出的方案是使用 Visual Studio Command Prompt， 也就是 一个CMD 或 windows版的shell， 它里面会设置好库文件路径。
+
+所以找到你安装的 Microsoft Visual C++ Build Tools 路径——如果是安装了整个 VS20XX，不知道 Microsoft Visual C++ Build Tools 文件夹会怎么安排，但肯定也有。本人实际路径是 C:\Program Files (x86)\Microsoft Visual C++ Build Tools。
+
+实际上就是找到 Visual C++ 20XX x86 Native Build Tools Command Prompt 这个文件（好像真没后缀名），x86是32位，看你的程序要32位还是64位的， 2017年5月份下载的Lua好像还是32位的（我猜的，因为它安装时，路径自动选择了Program Files(x86)）。
+
+右键-以管理员身份运行，即可打开命令行窗口， 再重新执行 install 命令，看你的luarocks.bat有没有加入到PATH环境变量中， 有则直接运行 luarocks.bat install luasocket, 没有则需要写完整路径，例：
+
+	"C:\Program Files (x86)\LuaRocks\luarocks.bat" install luasocket
+
+双引号是因为路径里有空格。
+
+## 延伸
+
+其实 Lua语言在安装时已经自带 luasocket了， 后来我安装成功时发现它里面已经带有了， 在Lua的安装目录的 clibs 文件夹里有socket文件夹。
+
+windows下类似缺头文件的编译错误估计都跟这个有关系， 就是头文件、库文件路径没有正确地添加到各种路径中， 添加也确实麻烦的话， 都可以试试这个方式， 使用 Microsoft Visual C++ Build Tools。
+
+# socket.lua
+
+使用 fceux加载一个文件，要调用到 socket库 
+
+	local socket = require("socket") 
+
+我下载编译好的dll，不起作用（程序崩溃），最后从 lua目录下拷了一个 socket.lua 过去(拷到 fceux.exe目录）， 成了~~~ 
+
+
+

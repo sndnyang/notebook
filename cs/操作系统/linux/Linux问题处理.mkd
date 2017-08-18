@@ -1,0 +1,17 @@
+Title: ubuntu问题处理
+Slug: some-issues-on-ubuntu    
+Date: 2017/5/20 10:39:58
+Authors: sndnyang sndnyang.github.io
+Modified: 2017/5/20 10:42:00
+Category: 操作系统    
+Tags: 操作系统, ubuntu   
+
+[TOC]
+
+# Ubuntu下创建ADSL连接
+
+默认没有ADSL连接方式， 需要安装pppoeconf
+
+然后再创建DSL连接
+
+
