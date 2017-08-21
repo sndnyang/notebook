@@ -22,3 +22,11 @@ slug: flask-problem-summary
                 new_data[k][e] = stored_data[k][e]
 
     word_dict.data = new_data
+
+注：
+
+    使用 copy.deepcopy()
+
+# flask上传文件
+
+
