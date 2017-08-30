@@ -1,10 +1,9 @@
 Title: shell数组
 Slug: shell-array    
 Date: 2017/4/17 19:01:08
-Authors: sndnyang sndnyang.github.io
-Category: shell    
+Authors: sndnyang sndnyang.github.io    
 Modified: 2017/4/17 19:09:40
-Tags: shell  
+Tags: shell, bash, ksh 
 
 [TOC]
 
