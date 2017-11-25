@@ -3,7 +3,7 @@ Slug: python-flask-logging-logger
 Date: 2017-09-09 15:32:25  
 Author: sndnyang (sndnyangd@gmail.com)  
 Type: code
-Tags: python, flask, 日志   
+Tags: python, flask   
 Category: python   
 Summary: python logging 和 flask 如何弄多个 logger 写不同日志文件 
   

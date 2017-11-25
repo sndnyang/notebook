@@ -34,4 +34,4 @@ Type: code
 
 # 后续使用
 
-[使用git在服务器上传部署代码]
+[使用git在服务器上传部署代码](use-git-upload-deploy-project)

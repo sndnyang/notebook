@@ -1,9 +1,10 @@
-Title:  基于进化算法的群落检测问题综述总结
+Title:  基于进化算法的社区发现问题综述总结
 Date: 2016-3-7
 Author: sndnyang  
 Slug:  ea_based_communities_survey  
 Category: 研究  
-tags: 论文  
+tags: 论文, 社区发现
+summary: 聚落检测,  群落检测, 社区发现
 
 [TOC]
 

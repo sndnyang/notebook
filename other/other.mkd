@@ -2,10 +2,15 @@ Title: 其他遗失的markdown
 Date: 2016-4-28            
 Author: sndnyang    
 Slug: some-lost-markdown   
-Category:  other   
-tags:  other    
+Category:  历史存档  
+tags: SQL, Linux, shell, Java, python, MOOC, vim, 论文  
+summary: 一堆历史存档不小心被删了 markdown文件， 恢复不了了
 
 [TOC]  
+
+# 说明 
+
+一堆历史存档不小心被删了 markdown文件， 只有用这个了
 
 # 数据库  
 
@@ -44,6 +49,7 @@ tags:  other
 [shell替换与插入-ru.html](shell-ti-huan-yu-cha-ru.html)  
 
 ## ksh  
+
 [ksh_auto_complete.html](ksh_auto_complete.html)  
 [ksh判断.html](ksh_judge.html)  
 [ksh手册.html](ksh_manual.html)  
@@ -73,8 +79,6 @@ tags:  other
 ## python  
 
 [python web框架html模板](HtmlTemplatesInPython.html)  
-[](HtmlTemplatesInPython.html)  
-
 
 ## java  
 

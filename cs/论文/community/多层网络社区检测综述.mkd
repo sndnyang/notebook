@@ -1,9 +1,10 @@
-Title:  多层网络聚落检测综述  
+Title:  多层网络社区发现综述  
 Date: 2016-3-14       
 Author: sndnyang  
 Slug:  multi_layer_cd_suver  
 Category: 研究  
-tags: 论文, 多目标进化算法, 群落检测  
+tags: 论文, 多目标进化算法, 社区发现
+summary: 多层社区发现,  聚落检测综述
 
 [TOC]
 

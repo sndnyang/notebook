@@ -4,7 +4,7 @@ Date: 2017/5/20 10:39:58
 Authors: sndnyang sndnyang.github.io
 Modified: 2017/5/20 10:42:00
 Category: 操作系统    
-Tags: 操作系统, ubuntu   
+Tags: 操作系统, Linux, Ubuntu  
 
 [TOC]
 

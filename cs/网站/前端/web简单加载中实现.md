@@ -1,7 +1,8 @@
 Title: web简单进度条\加载中实现  
 slug: web-simple-loader  
-tags: web, 进度条, loader, loading, html, css, javascript 
-summary: web简单进度条\加载中实现及调用
+tags: web, html, css, js 
+summary: web简单进度条\加载中实现及调用, loader, loading
+Date: 2017-05-30 13:27:22
 Type: code
 
 # js

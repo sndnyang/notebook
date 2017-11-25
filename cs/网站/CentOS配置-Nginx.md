@@ -20,6 +20,8 @@ summary:  CentOS Nginx 安装 配置 和 运行
     gpgcheck=0
     enabled=1
 
+OS变更为相应的操作系统如 centos, OSRELEASE为6或7， 可以直接打开 http://nginx.org/packages 查看
+
     yum -y install nginx
 
 # 配置

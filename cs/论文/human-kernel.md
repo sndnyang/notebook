@@ -4,6 +4,8 @@ slug: human_kernel_summary
 category: 研究
 tags: 论文
 
+# 没看完
+
 bayesian nonparametric models such as Gaussian processes
 
 function extrapolation problems

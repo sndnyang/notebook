@@ -3,7 +3,7 @@ Slug: python-validate-code-generatation
 Date: 2017-09-09 18:00:55  
 Author: sndnyang (sndnyangd@gmail.com)  
 Type: code
-Tags: 验证码, python   
+Tags: python, 网站, web   
 Category: web开发   
 Summary: Python如何生成简单、基本的验证码图片  
   

@@ -3,7 +3,7 @@ Slug: use-git-upload-deploy-project
 Date: 2017-08-28 09:05:05  
 Author: sndnyang (sndnyangd@gmail.com)  
 Type: code   
-Tags: git, 部署, 代码, 上传       
+Tags: git, 部署
 Category: 开发工具    
 Summary: 如何在服务器上创建GIT库，使得git push之后能自动化部署    
   
@@ -13,7 +13,7 @@ Summary: 如何在服务器上创建GIT库，使得git push之后能自动化部
 
 ## 安装GIT
 
-略
+[CentOS配置-git安装](config-centOS-install-git)
 
 ## 本地创建
 
