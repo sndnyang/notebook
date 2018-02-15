@@ -1,0 +1,53 @@
+1. right-hand side
+
+2. left-hand side
+
+3. important running time asymptotic bounder
+
+4. random-access machine (RAM) model
+
+5. Order of growth
+
+6. Graph representations
+
+7. Divide and conquer
+
+8. Greedy algorithms
+
+9. condition
+
+10. Dynamic programming
+
+11. DP condition
+
+12. Parallel speedup
+
+13. Parallel efficiency
+
+14. Upper limit on running time
+
+15. Directed acyclic graphs(dag)
+
+16. represent computations using dags
+
+17. parallel complexity
+
+18. shared-memory model
+
+19. Shared-memory mode
+
+20. MIMD
+
+21. global read/write
+
+22. PRAM variations
+
+23. three subtypes of CRCW
+
+24. network model  some how harder , so review
+
+25. message passing
+
+26. topological properties of the network
+
+27. 
