@@ -20,3 +20,25 @@ Summary: Git使用时遇到的一些问题
 示例：
 
     $ git config --global core.quotepath false
+
+
+＃ Git本地多用户配置
+
+编辑 ~/.ssh/config
+
+    Host git.iboxpay.com
+        HostName git.iboxpay.com  //这里填你们公司的git网址即可
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/id_rsa_gitlab
+        User zhangjun
+
+    # github
+    Host github.com
+        HostName github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/id_rsa_github
+        User ZJsnowman
+
+[参考来源](https://blog.csdn.net/jack_0817/article/details/55668892)
+
+
