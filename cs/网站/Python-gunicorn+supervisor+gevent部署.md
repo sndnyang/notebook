@@ -4,7 +4,7 @@ Date: 2017-08-28 10:41:29
 Author: sndnyang (sndnyangd@gmail.com)  
 Type: code  
 tags: python, web
-Category: 数据库  
+Category: web  
 summary:  python, web, gunicorn, supervisor, gevent 部署
 
 [TOC]
