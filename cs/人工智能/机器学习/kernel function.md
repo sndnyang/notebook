@@ -1,4 +1,9 @@
-kernel function
+Title: 核函数kernel function汇总
+Date: 2018-11-15 22:18:30
+slug: kernel-function
+category: 机器学习   
+tags: 机器学习, 人工智能  
+Modified: 2018-11-25 22:18:30
 
 
 
@@ -34,3 +39,27 @@ kernel function
    \end{aligned}
    $$
    
+   
+1. RBF(radial basis function) 函数
+   $$
+   x = \theta \\
+   k(x, x') = exp(-\frac{1}{h} || x - x'||^2)
+   $$
+   对应 gradient:
+   $$
+   \nabla_xk(x, x') = \sum \frac{2}{h} (x' - x)k(x, x')
+   $$
+
+2. RBF(radial basis function) 函数
+
+$$
+x = \theta \\
+k(x, x') = k(P(x), P(x')) = exp(-\frac{1}{h} || P(x) - P(x')||^2)
+$$
+
+对应 gradient:
+$$
+\nabla_xk(x, x') = \sum \frac{2}{h} (\nabla P(x') - \nabla P(x)) k(P(x), P(x'))
+$$
+
+1. 
