@@ -136,6 +136,10 @@ awk 和 c 的几乎一样
 
 写个循环也行，但是肯定没有上面一句就搞定简单。
 
+# 带空格文件删除
+
+find ./ -name '*.bak' -print0 | xargs -0 rm -rf
+
 # 判断操作系统
 
     uname
