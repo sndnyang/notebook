@@ -83,3 +83,12 @@ compiler = "C:\MinGW\bin\gcc.exe"
 
 https://github.com/pyne/pyne/issues/27
 
+# python 2 3, cPickle and pickle 
+
+	python 3 pickle 'ascii' codec can't decode byte 0x8a in position 3: ordinal
+	
+解决方案： [website](https://blog.csdn.net/qq_41185868/article/details/79039604)
+
+	.load(f,encoding='bytes')
+
+

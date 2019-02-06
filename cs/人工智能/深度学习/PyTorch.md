@@ -33,3 +33,10 @@ Modified: 2018-12-19 22:18:30
 
 如果不在倒数第二行使用 .cpu()， 经常出现，函数返回后，占用的GPU内存不被释放, 有时是覆盖掉，有时干脆累加， 分分钟撑爆GPU内存
 
+# torch 1.0/0.4.1 
+
+	libtorch_python.so: undefined symbol: _Z11libshm_initPKc
+	
+When I installed the torch 1.0,  there's a libshm.so in the $LD_LIBRARY_PATH.
+
+Just remove the path from $LD_LIBRARY_PATH, and reinstall. 
