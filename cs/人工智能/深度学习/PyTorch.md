@@ -40,3 +40,19 @@ Modified: 2018-12-19 22:18:30
 When I installed the torch 1.0,  there's a libshm.so in the $LD_LIBRARY_PATH.
 
 Just remove the path from $LD_LIBRARY_PATH, and reinstall. 
+
+安装torch时， 之前因某原因（不记得）给LD_LIBRARY_PATH多加了一个带libshm.so文件的路径， 导致torch加载版本不对， 删掉路径， 刷新LD_LIBRARY_PATH， 重装 torch即可。
+
+
+# 初始化权重
+
+因为PyTorch初始化不是使用 numpy， 与其他框架跨框架比较时， 需要使用 numpy 来初始化， 才能一致。
+
+	def normal_(tensor, mean=0, std=1):
+		with torch.no_grad():
+			return tensor.normal_(mean, std)
+			
+使用方法：
+
+	model.apply(weight_init)
+	
