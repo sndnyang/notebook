@@ -29,3 +29,21 @@ python设置系统变量的方法
 
 [引用CSDN](https://blog.csdn.net/sinat_26917383/article/details/75633754)
 
+
+# tensorflow cudnn 版本问题
+
+Loaded runtime CuDNN library: 7.0.5 but source was compiled with: 7.2.1
+
+cudnn 7.0.4 对应 tensorflow-gpu==1.10.1 , 1.11, 1.12 默认的 cudnn 版本更新。。。
+
+[cudnn报错解决](https://blog.csdn.net/jy1023408440/article/details/82887479)
+
+# 解决Tensorflow 使用时cpu编译不支持警告
+
+tensorflow 大量信息
+
+	import os  
+	os.environ["TF_CPP_MIN_LOG_LEVEL"]='1' # 这是默认的显示等级，显示所有信息  
+	os.environ["TF_CPP_MIN_LOG_LEVEL"]='2' # 只显示 warning 和 Error   
+	os.environ["TF_CPP_MIN_LOG_LEVEL"]='3' # 只显示 Error
+
