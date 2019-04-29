@@ -52,3 +52,15 @@ X-MultipleArgs=false
 Type=Application
 MimeType=application/x-java-archive
 StartupNotify=true
+
+
+# Mate桌面环境
+
+## 终端
+
+mate-terminal 作为默认终端， 不可设置终端名称以示区别， 不好用
+
+修改默认终端， system->preferences->personal->preferred applications->system->terminal emulator
+
+如图： ![1](./images/mate_terminal_1.png)
+![2](./images/mate_terminal_2.png)

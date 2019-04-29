@@ -56,3 +56,14 @@ Just remove the path from $LD_LIBRARY_PATH, and reinstall.
 
 	model.apply(weight_init)
 	
+# 对非scalar求导
+
+grad on non-scalar/tensor
+
+    torch.autograd.grad(f_x[:, 0], logits, grad_outputs=torch.ones_like(f_x[:, 0]))
+    
+# BatchNorm affine
+
+It seems TF/chainer most frameworks works with affine=False(affine = True will introduce some randomness)
+
+不知道为什么， TF/CHAINER等框架的batchnorm 都是固定的， 就PyTorch 默认有随机。

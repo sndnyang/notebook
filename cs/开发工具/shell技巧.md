@@ -159,3 +159,9 @@ find ./ -name '*.bak' -print0 | xargs -0 rm -rf
 
 ⑴使用up和down键来上下浏览之前执行的命令
 ⑵键入ctr+r来在命令历史中搜索命令
+
+# shell脚本中判断上一个命令是否执行成功
+
+    if [[ $? -ne 0 ]]; then
+        echo "failed"
+    fi
