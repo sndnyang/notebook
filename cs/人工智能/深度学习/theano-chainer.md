@@ -9,13 +9,29 @@ Modified: 2019-12-19 22:18:30
 
 # Chainer 
 
-Use cupy....The installation is a bit complex. Need to be careful about the environment variables.
+## Installation to use GPU 安装
+
+
+The backend is cupy. Choose the right version of cuda.
+
+Chainer 后端用的是cupy，需要根据cuda版本选择。
+
+If your cudnn path is not in the $CUDA_PATH directory, you must set:
+
+如果你的 cudnn 安装位置和 cuda不是同一个文件夹， 安装前必须设置以下环境变量：
+
+    export CFLAGS=-I/path/to/cudnn/include
+    export LDFLAGS=-L/path/to/cudnn/lib
+    export LD_LIBRARY_PATH=/path/to/cudnn/lib:$LD_LIBRARY_PATH
+
+Refer to these two links: [install cupy](https://docs-cupy.chainer.org/en/latest/install.html#install-cupy), and [install cudnn](https://docs-cupy.chainer.org/en/latest/install.html#installing-cudnn-and-nccl)
+
 
 ## initialize/update the weight by numpy
 
 Reference to [normal initializer](https://github.com/chainer/chainer/blob/v5.2.0/chainer/initializers/normal.py#L10)
 
-Its implementation is different from PyTorch.
+Its implementation is different from PyTorch. 
 
 
 # Theano

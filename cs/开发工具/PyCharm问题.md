@@ -41,3 +41,9 @@ then restart your pycharm, u'll find bug fixed.
 		```
 		Exec = bash -i -c /path/pycharm.sh
 		```
+        
+# ssh远端开发，找不到远端的包， nothing to show
+
+使用 2018.1 版本能显示， 不过 os, traceback 等一些也看不到， 2018.3 以上就开始无法显示， 有说使用ip地址、删除~/.pycharm_helper 可以解决这问题， 但我试了没成功。
+
+Using version 2018.1 can show most packages. But I can't find os,traceback etc. If I use the pycharm higher than 2018.3, it will show that nothing to show. In the forum, someone said using ip address, deleting ~/.pycharm_helper directory will solve this issue. However I tried both, neither works.
