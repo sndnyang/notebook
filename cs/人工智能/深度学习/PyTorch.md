@@ -7,6 +7,27 @@ Modified: 2018-12-19 22:18:30
 
 [TOC]
 
+# 复现
+
+CuDNN
+When running on the CuDNN backend, two further options must be set:
+
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+如：
+
+    def set_framework_seed(seed, debug=False):
+        if debug:
+            torch.backends.cudnn.deterministic = True
+            torch.backends.cudnn.benchmark = False
+        random.seed(seed)
+        np.random.seed(seed)
+        _ = torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            _ = torch.cuda.manual_seed(seed)
+            
+            
 # 函数里的内存占用不释放
 
 比如, 使用的函数
