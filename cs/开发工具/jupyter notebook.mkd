@@ -1,0 +1,40 @@
+Title: jupyter notebook笔记
+Slug: notes-on-jupyter-notebook
+Date: 2019/5/6 23:43:29
+Authors: sndnyang sndnyang.github.io
+Modified: 2019/5/8 18:10:01
+
+[TOC]
+
+# 使用ssh访问远端notebook
+
+1. 远端服务器启动notebook, jupyter notebook， 记下端口号和口令（或标志token)
+2. 设置ssh隧道连接远程服务器， 为了避免分不清端口代表远程还是本地， 直接设置成一样就好了：  
+   ssh -N -L port:localhost:port <remote_user>@<remote_host>
+3. 本地浏览器打开 http://localhost:port/?token=abcdefghijklmnopqrstuvwxyl01234567890
+
+4. Start jupyter notebook at remote server: jupyter notebook， Note: the port, passward or the token
+5. Set ssh tunnel to connect to remote server. To avoid confusing about the remote and local ports, just set the same port for both of them:  
+   ssh -N -L port:localhost:port <remote_user>@<remote_host>
+6. Open local browser with token: http://localhost:port/?token=abcdefghijklmnopqrstuvwxyl01234567890
+
+
+# Jupyter 魔术命令 magic command
+
+[link](https://segmentfault.com/a/1190000010758722)
+
+## 自动重新读入python模块
+
+    %load_ext autoreload
+    %autoreload 2
+    
+## 文件相关
+
+    %load	导入python文件
+    %%writefile
+    
+## 其他
+
+    %env	设置环境变量(无需重启)
+    %debug
+    %pdb	控制pdb交互式调试器的自动调用
