@@ -2,8 +2,7 @@ Title: PyTorch问题
 Date: 2018-12-19 22:18:30
 slug: PyTorch-issues
 category: 深度学习   
-tags: 深度学习 机器学习, 人工智能  
-Modified: 2018-12-19 22:18:30
+tags: 深度学习, 机器学习, 人工智能  
 
 [TOC]
 
@@ -26,8 +25,9 @@ When running on the CuDNN backend, two further options must be set:
         _ = torch.manual_seed(seed)
         if torch.cuda.is_available():
             _ = torch.cuda.manual_seed(seed)
-            
-            
+
+
+​            
 # 函数里的内存占用不释放
 
 比如, 使用的函数
@@ -44,11 +44,11 @@ When running on the CuDNN backend, two further options must be set:
         d = x.size(1)
         if y is None:
             y = x
-
+    
         m = y.size(0)
         x_expand = x.unsqueeze(1).expand(n, m, d)
         y_expand = y.unsqueeze(0).expand(n, m, d)
-
+    
         dist = torch.pow(x_expand - y_expand, 2).sum(2).cpu()
         return dist
 
@@ -57,7 +57,7 @@ When running on the CuDNN backend, two further options must be set:
 # torch 1.0/0.4.1 
 
 	libtorch_python.so: undefined symbol: _Z11libshm_initPKc
-	
+
 When I installed the torch 1.0,  there's a libshm.so in the $LD_LIBRARY_PATH.
 
 Just remove the path from $LD_LIBRARY_PATH, and reinstall. 
@@ -72,19 +72,62 @@ Just remove the path from $LD_LIBRARY_PATH, and reinstall.
 	def normal_(tensor, mean=0, std=1):
 		with torch.no_grad():
 			return tensor.normal_(mean, std)
-			
+
 使用方法：
 
 	model.apply(weight_init)
-	
+
 # 对非scalar求导
 
 grad on non-scalar/tensor
 
     torch.autograd.grad(f_x[:, 0], logits, grad_outputs=torch.ones_like(f_x[:, 0]))
-    
+
 # BatchNorm affine
 
 It seems TF/chainer most frameworks works with affine=False(affine = True will introduce some randomness)
 
 不知道为什么， TF/CHAINER等框架的batchnorm 都是固定的， 就PyTorch 默认有随机。
+
+# different momentum 
+
+[momentum SGD](https://pytorch.org/docs/stable/optim.html#torch.optim.SGD)
+
+PyTorch uses:
+
+    v = ρ * v + g
+    p = p − lr * v
+
+Other frameworks may use:
+
+    v = ρ * v + lr * g
+    p = p − v
+    
+    or
+    v = ρ * v + lr * (1 - ρ) g
+    p = p − v
+
+
+
+# Memory usage
+
+初始状态， 仅向GPU传入一个tensor， 占用内存如下
+
+![tensor size](images/tensor_size.png)
+
+
+
+![init memory](images/init.png)
+
+传入第二个tensor后：
+
+![two tensor](images/step_2.png)
+
+实际占用内存数约为： 
+
+$(973 - 793) * 1024 * 1024 = 188743680 \approx 187846400$
+
+
+
+所以， 有大约  $(793-180) =613$MB 内存被初始化占用。
+

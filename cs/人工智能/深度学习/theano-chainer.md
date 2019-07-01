@@ -1,9 +1,9 @@
 Title: Theano-Chainer   
-Date: 2019-2-19 22:18:30
-slug: Theano-Chainer -issues
+Date: 2019-2-19 22:18:30   
+slug: Theano-Chainer-issues   
 category: 深度学习   
 tags: 深度学习 机器学习, 人工智能  
-Modified: 2019-12-19 22:18:30
+Modified: 2019-12-19 22:18:30    
 
 [TOC]
 
@@ -41,3 +41,24 @@ Its implementation is different from PyTorch.
 We need pygpu library to utilize GPU, so it seems that only conda support pygpu, I can't find the library by pip.
 
 tensorboardX need to use pip to install.
+
+
+
+## 安装建议 suggestion
+
+python 2.7 直接使用 conda install theano pygpu 
+
+
+
+python 3 可能更有效方式， 分两步
+
+1. conda install pygpu  or  conda install theano pygpu
+2. update theano using pip. pip install theano==1.0.4
+
+
+
+### Error information
+
+1. Mixed dnn version. The header is version xxx  while the library is version  yyyy
+2. theano seems not work > 3.5
+3. conda only has theano==1.0.2, but I encounter the 1. mixed dnn version problem.
