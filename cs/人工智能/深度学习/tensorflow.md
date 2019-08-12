@@ -7,6 +7,25 @@ Modified: 2018-4-25 22:18:30
 
 [TOC]
 
+# python2 3 兼容
+
+The error information:
+
+```TypeError: Can not convert a dict_values into a Tensor or Operation.```
+
+```TypeError: Can not convert a dict_values into a Tensor or Operation.```
+
+    File "/home/xyang2/project/research/miscella/vat_tf/train_semisup.py", line 211, in main
+        act_values = sess.run(values)
+
+It's caused by the compatibility of python2 and python3. [solution](https://github.com/balancap/SSD-Tensorflow/issues/154)
+
+Simpler solution for this code:
+
+```values = list(losses_eval_train.values())```
+
+
+
 # 显卡使用问题
 
 python设置系统变量的方法
@@ -21,9 +40,9 @@ python设置系统变量的方法
 
 	import tensorflow as tf
 	config = tf.ConfigProto()
-
+	
 	config.gpu_options.allow_growth = True
-
+	
 	config.gpu_options.per_process_gpu_memory_fraction = 0.3
 	tf.Session(config=config)
 
@@ -37,6 +56,10 @@ Loaded runtime CuDNN library: 7.0.5 but source was compiled with: 7.2.1
 cudnn 7.0.4 对应 tensorflow-gpu==1.10.1 , 1.11, 1.12 默认的 cudnn 版本更新。。。
 
 [cudnn报错解决](https://blog.csdn.net/jy1023408440/article/details/82887479)
+
+
+
+使用 conda 安装
 
 # 解决Tensorflow 使用时cpu编译不支持警告
 

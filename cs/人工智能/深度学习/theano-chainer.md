@@ -12,7 +12,7 @@ Modified: 2019-12-19 22:18:30
 ## Installation to use GPU 安装
 
 
-The backend is cupy. Choose the right version of cuda.
+The backend is based on cupy. Choose the right version of cuda.
 
 Chainer 后端用的是cupy，需要根据cuda版本选择。
 
@@ -40,6 +40,8 @@ Its implementation is different from PyTorch.
 
 We need pygpu library to utilize GPU, so it seems that only conda support pygpu, I can't find the library by pip.
 
+但是 tensorboardx 是不能用conda装的
+
 tensorboardX need to use pip to install.
 
 
@@ -50,7 +52,13 @@ python 2.7 直接使用 conda install theano pygpu
 
 
 
-python 3 可能更有效方式， 分两步
+python 3 可能更有效方式， 
+
+conda install pygpu  libgpuarray numpy==1.15.4 theano   -c mila-udem
+
+
+
+本来我以为要分两步
 
 1. conda install pygpu  or  conda install theano pygpu
 2. update theano using pip. pip install theano==1.0.4

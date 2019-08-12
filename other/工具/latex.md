@@ -5,7 +5,7 @@ Author: sndnyang (sndnyangd@gmail.com)
 Tags: 科研, 工具
 Category: 科研      
 Summary: latex 坑
-  
+
 [TOC]
 
 # bad math environment delimiter 
@@ -26,7 +26,8 @@ Summary: latex 坑
 
 	\ref{bayesian_posterior}
 
-	
+
+​	
 # No positions in optional float specifier.
 
 \begin{figure}[] or \begin{table}[]
@@ -36,17 +37,25 @@ Summary: latex 坑
 	\documentclass{article}
 	\usepackage{graphicx}
 	\begin{document}
-
+	
 	\begin{table}
 	\resizebox{\textwidth}{!}{%
 	  \begin{tabular}{cc}
 		Knuth & Lamport
 	  \end{tabular}}
 	\end{table}
-
-	\end{document}
 	
+	\end{document}
+
 # 代码算法显示 input output
 
 	\renewcommand{\algorithmicrequire}{\textbf{Input:}} % Use Input in the format of Algorithm
 	\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm
+
+
+
+# 疯狂吐槽AAAI模板
+
+    \usepackage{amsmath,amsfonts}
+
+这两个ams包没有默认加入， 坑死我了。
