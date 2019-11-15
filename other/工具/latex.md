@@ -127,5 +127,14 @@ But the instruction in AAAI said that don't use vspace. 但AAAI的模板里明�
 
 # sty
 
-```sudo yum -y install 'tex(multirow.sty)'
 ```
+sudo yum -y install 'tex(multirow.sty)'
+```
+
+# synctex
+
+vscode latex-workshop
+
+tex -> PDF: CTRL+ALT+J
+
+PDF -> tex: Ctrl+click
