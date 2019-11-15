@@ -123,3 +123,9 @@ By default, it is set to `false`. We can set it to `true` by:
 ```
 
 But the instruction in AAAI said that don't use vspace. 但AAAI的模板里明确说了不要用vspace。
+
+
+# sty
+
+```sudo yum -y install 'tex(multirow.sty)'
+```
