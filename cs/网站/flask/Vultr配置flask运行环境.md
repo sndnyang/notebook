@@ -5,7 +5,7 @@ Author: sndnyang (sndnyangd@gmail.com)
 Tags: flask, python, PostgreSQL, Redis, Nginx, git, web     
 Category: web开发   
 Summary: Vultr, flask, python27, SQLAlchemy, PostgreSQL, Redis, Supervisor, Gunicorn, Nginx, DNS, git, virtualenv 配置汇总      
-  
+
 [TOC]
 
 # 总结
@@ -119,3 +119,13 @@ Godaddy之前主要是CNAME记录， 转到 openshift\github.io\google app engin
 现在的问题是， 主域名 www 这个可以了， 但另一个连 google app engine的data失败了（本来是好的）， 尴尬。
 
 突然还发现了另一问题， 我之前为什么在 google app engine那边设置了DNS？它已经有 域名了， 我在 godaddy上直接设置CNAME就行了~~~
+
+
+
+# debug 2 threads
+
+怎么只调用一次
+
+```py
+if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
+```

@@ -93,6 +93,8 @@ It seems TF/chainer most frameworks works with affine=False(affine = True will i
 
 [momentum SGD](https://pytorch.org/docs/stable/optim.html#torch.optim.SGD)
 
+PyTorch的momentum实现和别的不太一样。。。最终效果应该接近， 但训练过程中， 损失值会匹配不上， 对用不同框架重现会造成一小点困惑。
+
 PyTorch uses:
 
     v = ρ * v + g
@@ -130,4 +132,10 @@ $(973 - 793) * 1024 * 1024 = 188743680 \approx 187846400$
 
 
 所以， 有大约  $(793-180) =613$MB 内存被初始化占用。
+
+
+
+# device-side error
+
+好像就是除了0
 
