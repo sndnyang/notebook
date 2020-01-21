@@ -54,3 +54,11 @@ Tags: vim
 
 ## 读入read
 
+## 编辑
+
+1. caw/yaw/daw：change a word可以修改/复制/删除当前光标所在位置的单词。对于int count=0;的例子，如果此时光标在count中间某处，比如u处，直接键入caw可以达到同样的效果。所以caw更强大一些。
+2. ci"：change inside "可以用于修改当前位置附近，在相同配对的"中的内容。比如对于const char *str="hello world";。当在双引号中间的任意位置键入ci"可以直接清空字符串，并继续输入新的希望的字符串。
+3. yi"：yank inside " 猜猜是啥意思？类似ci"只是把编辑操作编程复制操作，因为y是复制！是不是很强大。
+4. ya"：yank around " 复制整个字符串，包括双引号。
+5. ci(、ci[：举一反三change inside ( change inside [。
+6. cit：这个比较特殊，可以直接编辑匹配的xml标签中的内容！经常编写html的童鞋可以熟悉一下。
