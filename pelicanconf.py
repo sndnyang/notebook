@@ -53,6 +53,10 @@ SOCIAL = (('You can add links in your config file', '#'),
 LANDING_PAGE_ABOUT = {'title': '科学，探索，空间，成长', 
         "details": '''简历CV: English <a href="https://1drv.ms/b/s!AgCFFlwzHuH8jFHCJF5oSfcxHGx3" target="_blank">English CV</a>
         中文 <a href="https://1drv.ms/b/s!AgCFFlwzHuH8jFK01spW4z0pYUGt " target="_blank">中文简历</a><br>
+        
+        Google Scholar： <a href="https://scholar.google.com/citations?user=iq-FsoMAAAAJ" target="_blank">Homepage</a>
+        百度学术: <a href="https://xueshu.baidu.com/homepage/sndnyang" target="_blank">主页</a><br>
+        
         微博： <a href="https://www.weibo.com/u/2405149384" target="_blank">微博主页</a>
         知乎： <a href="https://www.zhihu.com/people/jiandanminzhi" target="_blank">知乎主页</a><br>
         蜻蜓读论文：<br>
