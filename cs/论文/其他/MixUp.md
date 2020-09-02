@@ -58,3 +58,54 @@ VC-complexity 不变， the convergence of ERM is guaranteed as long as the size
 
 ## 
 
+
+
+# 相关
+
+
+
+1. Mixup ICLR 2018
+
+2. manifold Mixup ICML 2019
+
+3. AdaMixUp  MixUp as Locally Linear Out-Of-Manifold Regularization   AAAI 2019
+
+4. CutMix ICCV2019(oral)
+
+5. AugMix ICLR2020
+
+6. Puzzle Mix  ICML'20
+
+7. Mixup+SemiSL->MixMatch  NIPS2019 
+
+8. ReMixMatch  ICLR2019
+
+9. Mixup+Defense->Mixup Inference ICLR 2020
+
+10. On Mixup Training Improved Calibration and Predictive Uncertainty  NIPS2019
+
+11. Nonlinear Mixup: Out-Of-Manifold Data Augmentation for Text Classification. AAAI 2020
+
+12. Adversarial Domain Adaptation with Domain Mixup  AAAI2020
+
+13. Active Mixup for Data-Efficient Knowledge Distillation, CVPR2020
+
+14. Adversarial Vertex Mixup, CVPR2020
+
+    
+
+1. Manifold Mixup for Few-shot Learning WACV2020
+2. Improving Short Text Classification Through Global Augmentation Methods CD-MAKE 2020
+3. Manifold Mixup Improves Text Recognition with CTC Loss  ICDAR2019
+4. Spatial Mixup IEEE ACCESS
+
+
+
+1. MetaMixup  未中
+2. SuperMix （被拒， 未中）
+3. Rethinking Image Mixture (unsupervised)   未中
+4. GraphMix (ICLR 被拒， 未中)
+5. FixMatch (MixMatch->ReMixMatch->FixMatch(+UDA+Cutout)未中)
+6. MixUp as Directional Adversarial Training (NIPS2019  ICLR2020 连拒， 未中)
+
+Hongyu Guo,  一人薅了4篇， 2篇AAAI， 2篇 arxiv
