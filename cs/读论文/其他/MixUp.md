@@ -94,10 +94,17 @@ VC-complexity 不变， the convergence of ERM is guaranteed as long as the size
 
     
 
-1. Manifold Mixup for Few-shot Learning WACV2020
-2. Improving Short Text Classification Through Global Augmentation Methods CD-MAKE 2020
-3. Manifold Mixup Improves Text Recognition with CTC Loss  ICDAR2019
-4. Spatial Mixup IEEE ACCESS
+15. Manifold Mixup for Few-shot Learning WACV2020
+
+16. Improving Short Text Classification Through Global Augmentation Methods CD-MAKE 2020
+
+17. Manifold Mixup Improves Text Recognition with CTC Loss  ICDAR2019
+
+18. Spatial Mixup IEEE ACCESS
+
+19. Understanding mixup training methods,  IEEE ACCESS
+
+20. Unifying semi-supervised and robust learning by mixup  ICLR 2019 Workshop
 
 
 
@@ -107,5 +114,6 @@ VC-complexity 不变， the convergence of ERM is guaranteed as long as the size
 4. GraphMix (ICLR 被拒， 未中)
 5. FixMatch (MixMatch->ReMixMatch->FixMatch(+UDA+Cutout)未中)
 6. MixUp as Directional Adversarial Training (NIPS2019  ICLR2020 连拒， 未中)
+7.  MixUp + Adversarial T 或 VAT? ICLR 上好像被拒的， 我看到过
 
 Hongyu Guo,  一人薅了4篇， 2篇AAAI， 2篇 arxiv

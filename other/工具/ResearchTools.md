@@ -5,45 +5,92 @@ Author: sndnyang (sndnyangd@gmail.com)
 Tags: 科研, 工具
 Category: 科研      
 Summary: 一些有用的科研工具
-  
+
 [TOC]
 
-# PDF阅读器
+# Efficent Tools
 
-还是foxit 福昕最好， 可以添加快捷键， 文电通好像也有快捷键， 但ctrl+H 是删除线而不是高亮， 其他的好像不存在快捷键。
+## Listary
 
-读方法适合用IPAD, 读文本适合用
+Find files/directorys
 
-# 文献管理工具
+And   we can pin the directorys to the Quick Access by right click
+
+## DocFetcher
+
+Search content in txt/pptx/excel
+
+
+
+# PDF Reader
+
+Ipad,  I suggest  marginnote or  **liquidtext**
+
+Windows -> Liquidtext,  So I suggest to use **liquidtext**
+
+
+
+Citavi is good when you are reading for writing. But Just for reading, liquidtext is better.
+
+
+
+# Document Manage/文献管理
+
+## Citavi
+
+highly recommended 
+
+It also support task management
+
+## TheBrain
+
+
+
+
 
 ## CNIK E－study
-
-## mendeley
-
-## zetero
 
 ## zetero + mendeley
 
 [同时使用zetero + mendeley](http://www.360doc.com/content/12/0521/21/21412_212635987.shtml)
 
-## Citavi
 
-# 写作
+
+# Code
+
+## Pycharm for Project
+
+
+
+# Version Control
+
+
+
+## github for windows
+
+
+
+## gitkraken
+
+
+
+# Writting
 
 ## latex
 
-### 在线编辑器
+### Online
 
 online editor
 
-[JaxEditor](https://zohooo.github.io/jaxedit/)
-
 [overleaf](https://v2.overleaf.com/project)
 
-### 示例
-[示例examples](http://www.texample.net/tikz/examples/)
+### VSCode + Latex Workshop
 
-# 绘图
+
+
+## 
+
+# Draw Diagram/Figures
 
 ## tikz
 
@@ -71,9 +118,9 @@ trying to find more examples
 
 [website](http://ethereon.github.io/netscope/#/editor)
 
-# 可视化
+# 可视化/Visualization
 
-## 实验结果可视化
+## 实验结果可视化 Experimental Results
 
 自己写的 written by myself. 
 
@@ -83,6 +130,6 @@ Because in machine learning/deep learning， the main task is to compare the tra
 
 [ExpVis](https://github.com/sndnyang/ExpVis)
 
-## 网络可视化
+## 网络可视化 NN visualization
 
-[2D3D神经网络可视化](http://scs.ryerson.ca/~aharley/vis/conv/)
+[2D3D Neural Network](http://scs.ryerson.ca/~aharley/vis/conv/)
