@@ -4,3 +4,5 @@ zhimind
 *.jpg
 *.png
 *.gif
+*_back_*
+*.pdf
