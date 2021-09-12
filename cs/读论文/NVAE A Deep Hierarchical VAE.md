@@ -1,7 +1,7 @@
 Title: NVAE: A Deep Hierarchical Variational Autoencoder
 Slug: NVAE
 Date: 2020/10/21 23:48:09
-Authors:  蜻蜓点论文  
+Authors:  论文  
 Category: 论文    
 Tags: 论文
 Summary:   

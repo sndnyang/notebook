@@ -1,7 +1,7 @@
 Title: Text Classification Using Label Names Only A Language Model Self-Training Approach  
 Slug: Text_Classification_Using_Label_Names_Only   
 Date: 2020/10/19 19:48:09    
-Authors:  蜻蜓点论文    
+Authors:  sndnyang   
 Category: 自然语言处理     
 Tags: 论文, 自然语言处理   
 Summary:      
